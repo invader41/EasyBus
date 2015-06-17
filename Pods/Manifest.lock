@@ -1,0 +1,28 @@
+PODS:
+  - AFSwipeToHide (0.1.0)
+  - DBGHTMLEntities (0.2.0)
+  - Masonry (0.6.1)
+  - MJExtension (2.1.1)
+  - MJRefresh (1.4.7)
+  - RACollectionViewReorderableTripletLayout (0.1.0)
+  - SLPagingView (0.0.5)
+
+DEPENDENCIES:
+  - AFSwipeToHide
+  - DBGHTMLEntities
+  - Masonry
+  - MJExtension
+  - MJRefresh
+  - RACollectionViewReorderableTripletLayout
+  - SLPagingView
+
+SPEC CHECKSUMS:
+  AFSwipeToHide: 2e9d9968dd40e4a3615c879783f0bfc1d30b80ec
+  DBGHTMLEntities: df8979bda566bf0ac4a66e6e7c14c005f4552ee9
+  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
+  MJExtension: 4b8a628ec7764a4b3c6c0e7261ec0687cf32ff20
+  MJRefresh: 6b140993028fa30f1fcb88e82925a7c7911415cf
+  RACollectionViewReorderableTripletLayout: 929208004b2f8c2dde12326bf75b11e902959ddf
+  SLPagingView: ba9bb6102cb318ce56f23d0a7e49a46ddcdad7e3
+
+COCOAPODS: 0.36.3
