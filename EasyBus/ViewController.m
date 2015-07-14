@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "JHService.h"
+#import "BusService.h"
 
 @interface ViewController ()
 

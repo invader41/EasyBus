@@ -14,5 +14,6 @@
 
 @property (nonatomic, retain) NSString * carCode;
 @property (nonatomic, retain) NSString * busLine;
+@property (nonatomic, retain) NSString * lineName;
 
 @end

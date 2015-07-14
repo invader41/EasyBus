@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A910ADB11B3A7D3C0065B7E8 /* FavoriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A910ADB01B3A7D3C0065B7E8 /* FavoriteCell.m */; };
 		A94F33A71B2FF14F00D7476A /* FavoriteCarCode.m in Sources */ = {isa = PBXBuildFile; fileRef = A94F33A61B2FF14F00D7476A /* FavoriteCarCode.m */; };
 		A94F33AA1B2FF15000D7476A /* FavoriteBusLine.m in Sources */ = {isa = PBXBuildFile; fileRef = A94F33A91B2FF15000D7476A /* FavoriteBusLine.m */; };
 		A94F33AD1B30087C00D7476A /* TemplatedTintColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A94F33AC1B30087C00D7476A /* TemplatedTintColorButton.m */; };
 		A94F33B01B313C2500D7476A /* BusFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94F33AF1B313C2500D7476A /* BusFavoritesViewController.m */; };
+		A94F33B41B31549900D7476A /* FavoriteBuslineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A94F33B21B31549900D7476A /* FavoriteBuslineCell.m */; };
+		A94F33B91B3155AF00D7476A /* FavoriteCarCodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A94F33B71B3155AF00D7476A /* FavoriteCarCodeCell.m */; };
+		A952745A1B3BE4E600C1E8E5 /* NearbyBusStationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A95274591B3BE4E600C1E8E5 /* NearbyBusStationCell.m */; };
+		A952745D1B3CEFB600C1E8E5 /* NearbyStationsPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A952745C1B3CEFB600C1E8E5 /* NearbyStationsPageViewController.m */; };
+		A95274651B3CFA1A00C1E8E5 /* NearbyStationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95274641B3CFA1A00C1E8E5 /* NearbyStationViewController.m */; };
+		A95274691B3D2FD400C1E8E5 /* BusDistanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A95274671B3D2FD400C1E8E5 /* BusDistanceCell.m */; };
+		A952746A1B3D2FD400C1E8E5 /* BusDistanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95274681B3D2FD400C1E8E5 /* BusDistanceCell.xib */; };
 		A99029D41B20313A000E5AD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A99029D31B20313A000E5AD9 /* main.m */; };
 		A99029D71B20313A000E5AD9 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A99029D61B20313A000E5AD9 /* AppDelegate.mm */; };
 		A99029DA1B20313A000E5AD9 /* EasyBus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A99029D81B20313A000E5AD9 /* EasyBus.xcdatamodeld */; };
@@ -23,7 +31,7 @@
 		A9902A091B2033B0000E5AD9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9902A051B20334C000E5AD9 /* CoreLocation.framework */; };
 		A9902A0A1B2033C6000E5AD9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9902A011B203324000E5AD9 /* CoreTelephony.framework */; };
 		A9902A0B1B2033D9000E5AD9 /* JuheApisSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A99029FF1B2032DD000E5AD9 /* JuheApisSDK.a */; };
-		A9902A0E1B2034B5000E5AD9 /* JHService.m in Sources */ = {isa = PBXBuildFile; fileRef = A9902A0D1B2034B5000E5AD9 /* JHService.m */; };
+		A9902A0E1B2034B5000E5AD9 /* BusService.m in Sources */ = {isa = PBXBuildFile; fileRef = A9902A0D1B2034B5000E5AD9 /* BusService.m */; };
 		A9902A121B2039E6000E5AD9 /* Bus.m in Sources */ = {isa = PBXBuildFile; fileRef = A9902A111B2039E6000E5AD9 /* Bus.m */; };
 		A9902A151B203B9B000E5AD9 /* CommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9902A141B203B9B000E5AD9 /* CommonModel.m */; };
 		A9902A181B203BD4000E5AD9 /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = A9902A171B203BD4000E5AD9 /* Station.m */; };
@@ -67,6 +75,8 @@
 		4AB9B78ADDC7A5687BAF4135 /* Pods-EasyBus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBus.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyBus/Pods-EasyBus.release.xcconfig"; sourceTree = "<group>"; };
 		783D7B94F8C8DAA7363D7870 /* Pods-EasyBus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyBus/Pods-EasyBus.debug.xcconfig"; sourceTree = "<group>"; };
 		A7188B4F7DF113E8714A89A8 /* libPods-EasyBus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyBus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A910ADAF1B3A7D3C0065B7E8 /* FavoriteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteCell.h; sourceTree = "<group>"; };
+		A910ADB01B3A7D3C0065B7E8 /* FavoriteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteCell.m; sourceTree = "<group>"; };
 		A94F33A51B2FF14F00D7476A /* FavoriteCarCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteCarCode.h; sourceTree = "<group>"; };
 		A94F33A61B2FF14F00D7476A /* FavoriteCarCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteCarCode.m; sourceTree = "<group>"; };
 		A94F33A81B2FF15000D7476A /* FavoriteBusLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteBusLine.h; sourceTree = "<group>"; };
@@ -75,6 +85,19 @@
 		A94F33AC1B30087C00D7476A /* TemplatedTintColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplatedTintColorButton.m; sourceTree = "<group>"; };
 		A94F33AE1B313C2500D7476A /* BusFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusFavoritesViewController.h; sourceTree = "<group>"; };
 		A94F33AF1B313C2500D7476A /* BusFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusFavoritesViewController.m; sourceTree = "<group>"; };
+		A94F33B11B31549900D7476A /* FavoriteBuslineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteBuslineCell.h; sourceTree = "<group>"; };
+		A94F33B21B31549900D7476A /* FavoriteBuslineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteBuslineCell.m; sourceTree = "<group>"; };
+		A94F33B61B3155AF00D7476A /* FavoriteCarCodeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteCarCodeCell.h; sourceTree = "<group>"; };
+		A94F33B71B3155AF00D7476A /* FavoriteCarCodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteCarCodeCell.m; sourceTree = "<group>"; };
+		A95274581B3BE4E600C1E8E5 /* NearbyBusStationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyBusStationCell.h; sourceTree = "<group>"; };
+		A95274591B3BE4E600C1E8E5 /* NearbyBusStationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyBusStationCell.m; sourceTree = "<group>"; };
+		A952745B1B3CEFB600C1E8E5 /* NearbyStationsPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyStationsPageViewController.h; sourceTree = "<group>"; };
+		A952745C1B3CEFB600C1E8E5 /* NearbyStationsPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyStationsPageViewController.m; sourceTree = "<group>"; };
+		A95274631B3CFA1A00C1E8E5 /* NearbyStationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyStationViewController.h; sourceTree = "<group>"; };
+		A95274641B3CFA1A00C1E8E5 /* NearbyStationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyStationViewController.m; sourceTree = "<group>"; };
+		A95274661B3D2FD400C1E8E5 /* BusDistanceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusDistanceCell.h; sourceTree = "<group>"; };
+		A95274671B3D2FD400C1E8E5 /* BusDistanceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusDistanceCell.m; sourceTree = "<group>"; };
+		A95274681B3D2FD400C1E8E5 /* BusDistanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusDistanceCell.xib; sourceTree = "<group>"; };
 		A99029CE1B20313A000E5AD9 /* EasyBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99029D21B20313A000E5AD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99029D31B20313A000E5AD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,8 +118,8 @@
 		A9902A011B203324000E5AD9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A9902A031B20333D000E5AD9 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		A9902A051B20334C000E5AD9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		A9902A0C1B2034B5000E5AD9 /* JHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHService.h; sourceTree = "<group>"; };
-		A9902A0D1B2034B5000E5AD9 /* JHService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHService.m; sourceTree = "<group>"; };
+		A9902A0C1B2034B5000E5AD9 /* BusService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusService.h; sourceTree = "<group>"; };
+		A9902A0D1B2034B5000E5AD9 /* BusService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusService.m; sourceTree = "<group>"; };
 		A9902A101B2039E6000E5AD9 /* Bus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bus.h; sourceTree = "<group>"; };
 		A9902A111B2039E6000E5AD9 /* Bus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bus.m; sourceTree = "<group>"; };
 		A9902A131B203B9B000E5AD9 /* CommonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonModel.h; sourceTree = "<group>"; };
@@ -205,8 +228,8 @@
 				A99029E31B20313A000E5AD9 /* LaunchScreen.xib */,
 				A99029D81B20313A000E5AD9 /* EasyBus.xcdatamodeld */,
 				A99029D11B20313A000E5AD9 /* Supporting Files */,
-				A9902A0C1B2034B5000E5AD9 /* JHService.h */,
-				A9902A0D1B2034B5000E5AD9 /* JHService.m */,
+				A9902A0C1B2034B5000E5AD9 /* BusService.h */,
+				A9902A0D1B2034B5000E5AD9 /* BusService.m */,
 				A9902A4A1B252D25000E5AD9 /* BaiduService.h */,
 				A9902A4B1B252D25000E5AD9 /* BaiduService.m */,
 			);
@@ -381,6 +404,10 @@
 				A9902A601B26AB64000E5AD9 /* BusArrivalsViewController.m */,
 				A94F33AE1B313C2500D7476A /* BusFavoritesViewController.h */,
 				A94F33AF1B313C2500D7476A /* BusFavoritesViewController.m */,
+				A952745B1B3CEFB600C1E8E5 /* NearbyStationsPageViewController.h */,
+				A952745C1B3CEFB600C1E8E5 /* NearbyStationsPageViewController.m */,
+				A95274631B3CFA1A00C1E8E5 /* NearbyStationViewController.h */,
+				A95274641B3CFA1A00C1E8E5 /* NearbyStationViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -388,11 +415,22 @@
 		A9902A3F1B218409000E5AD9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A94F33B11B31549900D7476A /* FavoriteBuslineCell.h */,
+				A94F33B21B31549900D7476A /* FavoriteBuslineCell.m */,
 				A9902A681B2A7A93000E5AD9 /* BusAndFavoriteCell.h */,
 				A9902A691B2A7A93000E5AD9 /* BusAndFavoriteCell.m */,
 				A9902A6A1B2A7A93000E5AD9 /* BusAndFavoriteCell.xib */,
 				A94F33AB1B30087C00D7476A /* TemplatedTintColorButton.h */,
 				A94F33AC1B30087C00D7476A /* TemplatedTintColorButton.m */,
+				A94F33B61B3155AF00D7476A /* FavoriteCarCodeCell.h */,
+				A94F33B71B3155AF00D7476A /* FavoriteCarCodeCell.m */,
+				A910ADAF1B3A7D3C0065B7E8 /* FavoriteCell.h */,
+				A910ADB01B3A7D3C0065B7E8 /* FavoriteCell.m */,
+				A95274581B3BE4E600C1E8E5 /* NearbyBusStationCell.h */,
+				A95274591B3BE4E600C1E8E5 /* NearbyBusStationCell.m */,
+				A95274661B3D2FD400C1E8E5 /* BusDistanceCell.h */,
+				A95274671B3D2FD400C1E8E5 /* BusDistanceCell.m */,
+				A95274681B3D2FD400C1E8E5 /* BusDistanceCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -516,6 +554,7 @@
 				A99029E01B20313A000E5AD9 /* Main.storyboard in Resources */,
 				A9902A5E1B257BC9000E5AD9 /* mapapi.bundle in Resources */,
 				A9902A6C1B2A7A93000E5AD9 /* BusAndFavoriteCell.xib in Resources */,
+				A952746A1B3D2FD400C1E8E5 /* BusDistanceCell.xib in Resources */,
 				A99029E51B20313A000E5AD9 /* LaunchScreen.xib in Resources */,
 				A99029E21B20313A000E5AD9 /* Images.xcassets in Resources */,
 			);
@@ -569,6 +608,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9902A121B2039E6000E5AD9 /* Bus.m in Sources */,
+				A952745A1B3BE4E600C1E8E5 /* NearbyBusStationCell.m in Sources */,
 				A9902A3A1B214381000E5AD9 /* BuslineSearchViewController.m in Sources */,
 				A99029DA1B20313A000E5AD9 /* EasyBus.xcdatamodeld in Sources */,
 				A9902A1B1B203D05000E5AD9 /* Arrival.m in Sources */,
@@ -576,20 +616,26 @@
 				A99029D71B20313A000E5AD9 /* AppDelegate.mm in Sources */,
 				A9902A2F1B21380F000E5AD9 /* RAMFrameItemAnimation.swift in Sources */,
 				A9902A611B26AB64000E5AD9 /* BusArrivalsViewController.m in Sources */,
+				A94F33B91B3155AF00D7476A /* FavoriteCarCodeCell.m in Sources */,
 				A9902A6B1B2A7A93000E5AD9 /* BusAndFavoriteCell.m in Sources */,
+				A952745D1B3CEFB600C1E8E5 /* NearbyStationsPageViewController.m in Sources */,
 				A94F33AD1B30087C00D7476A /* TemplatedTintColorButton.m in Sources */,
-				A9902A0E1B2034B5000E5AD9 /* JHService.m in Sources */,
+				A9902A0E1B2034B5000E5AD9 /* BusService.m in Sources */,
 				A9902A341B21380F000E5AD9 /* RAMItemAnimationProtocol.swift in Sources */,
+				A95274691B3D2FD400C1E8E5 /* BusDistanceCell.m in Sources */,
 				A9902A4C1B252D25000E5AD9 /* BaiduService.m in Sources */,
 				A99029DD1B20313A000E5AD9 /* ViewController.m in Sources */,
 				A94F33AA1B2FF15000D7476A /* FavoriteBusLine.m in Sources */,
 				A9902A2E1B21380F000E5AD9 /* RAMBounceAnimation.swift in Sources */,
 				A9902A151B203B9B000E5AD9 /* CommonModel.m in Sources */,
+				A95274651B3CFA1A00C1E8E5 /* NearbyStationViewController.m in Sources */,
 				A9902A181B203BD4000E5AD9 /* Station.m in Sources */,
+				A910ADB11B3A7D3C0065B7E8 /* FavoriteCell.m in Sources */,
 				A9902A301B21380F000E5AD9 /* RAMFumeAnimation.swift in Sources */,
 				A9902A521B256A74000E5AD9 /* BusArrivalViewController.m in Sources */,
 				A99029D41B20313A000E5AD9 /* main.m in Sources */,
 				A9902A331B21380F000E5AD9 /* RAMAnimatedTabBarController.swift in Sources */,
+				A94F33B41B31549900D7476A /* FavoriteBuslineCell.m in Sources */,
 				A9902A321B21380F000E5AD9 /* RAMTransitionItemAnimation.swift in Sources */,
 				A94F33A71B2FF14F00D7476A /* FavoriteCarCode.m in Sources */,
 				A9902A1E1B203D74000E5AD9 /* LineInfo.m in Sources */,

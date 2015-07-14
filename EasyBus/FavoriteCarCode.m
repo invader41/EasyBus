@@ -13,5 +13,6 @@
 
 @dynamic carCode;
 @dynamic busLine;
+@dynamic lineName;
 
 @end

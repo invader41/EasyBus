@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JHService.h"
+#import "BusService.h"
 
 
 @interface BusArrivalViewController : UIViewController

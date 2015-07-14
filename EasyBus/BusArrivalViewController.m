@@ -48,7 +48,7 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"busLine==%@", self.bus.code];
     [search setPredicate:predicate];
     NSArray *result = [SharedAppDelegate.managedObjectContext executeFetchRequest:search error:nil];
-    if(result.count == 0)
+    if(result.count > 0)
     {
         [self.favoriteButton setTintColor:[UIColor yellowColor]];
     }
@@ -81,7 +81,7 @@
 
 -(void)fetchData
 {
-    [[JHService SharedInstance] searchBuslineArrivals:self.bus.code Success:^(NSArray *arrivals) {
+    [[BusService SharedInstance] searchBuslineArrivals:self.bus.code Success:^(NSArray *arrivals) {
         _busArrivalsResult = arrivals;
         [_tableView reloadData];
         [_tableView.header endRefreshing];
@@ -103,6 +103,7 @@
         FavoriteCarCode *newModel = [[FavoriteCarCode alloc] initWithEntity:[NSEntityDescription entityForName:@"FavoriteCarCode" inManagedObjectContext:SharedAppDelegate.managedObjectContext] insertIntoManagedObjectContext:SharedAppDelegate.managedObjectContext];
         newModel.carCode = arrival.carCode;
         newModel.busLine = self.bus.code;
+        newModel.lineName = self.bus.bus;
         [SharedAppDelegate.managedObjectContext insertObject:newModel];
         
         [sender.imageView setTintColor:[UIColor yellowColor]];
@@ -206,6 +207,7 @@
     {
         FavoriteBusLine *newModel = [[FavoriteBusLine alloc] initWithEntity:[NSEntityDescription entityForName:@"FavoriteBusLine" inManagedObjectContext:SharedAppDelegate.managedObjectContext] insertIntoManagedObjectContext:SharedAppDelegate.managedObjectContext];
         newModel.busLine = self.bus.code;
+        newModel.lineName = self.bus.bus;
         [SharedAppDelegate.managedObjectContext insertObject:newModel];
         
         [sender setTintColor:[UIColor yellowColor]];

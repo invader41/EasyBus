@@ -17,14 +17,14 @@
 #define OPENID @"JHb0fa603485cdfb742565d47dfddb718d"
 #define APPKEY @"088fccfa30aac18c991e3c422cabc9a0"
 
-@interface JHService : NSObject
+@interface BusService : NSObject
 +(instancetype)SharedInstance;
--(void)registerJHService;
+//-(void)registerJHService;
 -(void)searchStationsByName:(NSString *)stationName
               Success:(void (^)(NSArray *stations))success
               Failure:(void (^)(NSError *error))failure;
 
--(void)searchBusStateByStation:(NSString *)stationCode
+-(void)searchBusStateByStationCode:(NSString *)stationCode
                        Success:(void (^)(NSArray *buses))success
                        Failure:(void (^)(NSError *error))failure;
 

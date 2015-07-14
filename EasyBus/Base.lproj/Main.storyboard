@@ -44,23 +44,25 @@
             </objects>
             <point key="canvasLocation" x="513" y="507"/>
         </scene>
-        <!--Bus Favorites View Controller-->
+        <!--我的收藏-->
         <scene sceneID="Me4-It-idC">
             <objects>
                 <collectionViewController id="GPi-KF-l70" customClass="BusFavoritesViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="loS-li-Nkr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewLayout key="collectionViewLayout" id="U8K-uU-mYY" customClass="RACollectionViewReorderableTripletLayout"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SSW-BB-uke">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="VvX-8K-gam">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <size key="customSize" width="320" height="200"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -68,13 +70,19 @@
                             <outlet property="delegate" destination="GPi-KF-l70" id="sKe-7B-RR2"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="e2a-ww-u3n"/>
+                    <navigationItem key="navigationItem" title="我的收藏" id="e2a-ww-u3n">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="kSs-jE-31O">
+                            <connections>
+                                <action selector="deleteItems:" destination="GPi-KF-l70" id="vyL-bB-z27"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfn-VD-VfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1321" y="-881"/>
         </scene>
-        <!--Busline Search View Controller-->
+        <!--线路查询-->
         <scene sceneID="HFU-gK-Hg8">
             <objects>
                 <viewController id="wN4-ci-Mma" customClass="BuslineSearchViewController" sceneMemberID="viewController">
@@ -137,7 +145,7 @@
                             <constraint firstItem="J8X-VO-rFc" firstAttribute="top" secondItem="hkG-2c-89c" secondAttribute="bottom" id="zcH-T2-mPE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Rfh-lO-arS"/>
+                    <navigationItem key="navigationItem" title="线路查询" id="Rfh-lO-arS"/>
                     <connections>
                         <outlet property="searchBar" destination="J8X-VO-rFc" id="1Ou-9l-zfi"/>
                         <outlet property="searchTipButton" destination="Qim-WY-PJ5" id="a60-rV-fgp"/>
@@ -405,16 +413,19 @@
             </objects>
             <point key="canvasLocation" x="513" y="-155"/>
         </scene>
-        <!--Item-->
+        <!--我的收藏-->
         <scene sceneID="jIu-PE-1Be">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jV8-IU-R5a" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="28-star" id="ZIl-yz-VXn" customClass="RAMAnimatedTabBarItem" customModule="EasyBus" customModuleProvider="target">
+                    <tabBarItem key="tabBarItem" title="我的收藏" image="28-star" id="ZIl-yz-VXn" customClass="RAMAnimatedTabBarItem" customModule="EasyBus" customModuleProvider="target">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                 <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="fIY-bu-NdE" id="B9r-hd-8KN"/>
+                        </connections>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fd0-1t-lge">
@@ -427,6 +438,16 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6G-Xk-nMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="fIY-bu-NdE" userLabel="Animation" customClass="RAMFumeAnimation" customModule="EasyBus" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="513" y="-880"/>
         </scene>

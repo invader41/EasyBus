@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <BaiduMapAPI/BMapKit.h>
+typedef void (^StringBlock)(NSString *text);
+typedef void (^FailureBlock)(NSError *error);
 
 @interface BaiduService : NSObject
--(void)registerBaiduService;
--(void)busLineSearch:(NSString *)busline;
+//-(void)registerBaiduService;
+-(void)searchNearestStationSuccess:(StringBlock)success Failure:(FailureBlock)failure;
 +(instancetype)SharedInstance;
 @end

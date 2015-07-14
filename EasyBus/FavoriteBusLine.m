@@ -12,5 +12,6 @@
 @implementation FavoriteBusLine
 
 @dynamic busLine;
+@dynamic lineName;
 
 @end

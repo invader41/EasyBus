@@ -9,7 +9,7 @@
 #import "BuslineSearchViewController.h"
 #import "BusArrivalPageViewController.h"
 #import <AFSwipeToHide/AFSwipeToHide.h>
-#import "JHService.h"
+#import "BusService.h"
 #import "BusArrivalViewController.h"
 #import <DBGHTMLEntities/DBGHTMLEntityDecoder.h>
 
@@ -65,6 +65,31 @@
                                                object:nil];
     
     [self updateElements];
+    
+
+    UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+    labelView.text = @"公交线路";
+    [labelView setFont:[UIFont boldSystemFontOfSize:17]];
+    labelView.textAlignment = NSTextAlignmentCenter;
+    self.navigationItem.titleView = labelView;
+    
+    
+
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.navigationItem.titleView setAlpha:0];
+    [self.navigationController.navigationItem.titleView setAlpha:0.8];
+    [UIView animateWithDuration:1 animations:^{
+        [self.navigationItem.titleView setAlpha:1];
+        [self.navigationItem.titleView setNeedsLayout];
+        [self.navigationItem.titleView layoutIfNeeded];
+    } completion:^(BOOL finished)
+    {
+        [self.navigationItem.titleView setAlpha:1];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -129,7 +154,7 @@
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     [searchBar resignFirstResponder];
-    [[JHService SharedInstance] searchBuslines:searchBar.text Success:^(NSArray *lines) {
+    [[BusService SharedInstance] searchBuslines:searchBar.text Success:^(NSArray *lines) {
         [_busSearchResults removeAllObjects];
         for(Bus *bus in lines)
         {

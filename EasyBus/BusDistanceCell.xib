@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="BusDistanceCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="158路" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4K-e4-RSV">
+                        <rect key="frame" x="8" y="8" width="49" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="49" id="cwH-IE-dDU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="官渎里立交换乘枢纽站=&gt;园区综合保税区东区首末站" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bp8-MU-Z3U">
+                        <rect key="frame" x="65" y="8" width="247" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="I76-8r-xPM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更新时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvu-yG-7Xw">
+                        <rect key="frame" x="192" y="30" width="62" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="7mB-cV-yCT"/>
+                            <constraint firstAttribute="width" constant="62" id="KRj-Ob-kFM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:57:10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoc-yo-oBt">
+                        <rect key="frame" x="254" y="30" width="58" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="ARt-yo-x53"/>
+                            <constraint firstAttribute="width" constant="58" id="MFs-Kt-A8P"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还有2站到达" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeL-Nu-WyE">
+                        <rect key="frame" x="65" y="30" width="119" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="jsL-wQ-V8G"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uvu-yG-7Xw" firstAttribute="top" secondItem="bp8-MU-Z3U" secondAttribute="bottom" constant="1" id="41Q-tN-Sj8"/>
+                    <constraint firstItem="uoc-yo-oBt" firstAttribute="leading" secondItem="uvu-yG-7Xw" secondAttribute="trailing" id="8lj-kh-gj2"/>
+                    <constraint firstItem="bp8-MU-Z3U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Dsg-BH-Y6d"/>
+                    <constraint firstItem="bp8-MU-Z3U" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Jsp-Ww-y4O"/>
+                    <constraint firstItem="uvu-yG-7Xw" firstAttribute="leading" secondItem="ZeL-Nu-WyE" secondAttribute="trailing" constant="8" id="PHT-CB-fYI"/>
+                    <constraint firstItem="bp8-MU-Z3U" firstAttribute="leading" secondItem="i4K-e4-RSV" secondAttribute="trailing" constant="8" id="VT5-1r-NVY"/>
+                    <constraint firstItem="ZeL-Nu-WyE" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Ver-f5-4vH"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="i4K-e4-RSV" secondAttribute="bottom" constant="-1" id="dLX-mb-OOB"/>
+                    <constraint firstItem="ZeL-Nu-WyE" firstAttribute="leading" secondItem="i4K-e4-RSV" secondAttribute="trailing" constant="8" id="ff3-fL-InR"/>
+                    <constraint firstItem="i4K-e4-RSV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="oqg-cW-b48"/>
+                    <constraint firstItem="i4K-e4-RSV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="riV-fD-rcf"/>
+                    <constraint firstItem="uoc-yo-oBt" firstAttribute="top" secondItem="bp8-MU-Z3U" secondAttribute="bottom" constant="1" id="uuO-JG-VMk"/>
+                    <constraint firstItem="uoc-yo-oBt" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="zyY-qE-Ljj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="busLabel" destination="i4K-e4-RSV" id="Ucf-wy-8E7"/>
+                <outlet property="distanceLabel" destination="ZeL-Nu-WyE" id="1hs-4M-ARg"/>
+                <outlet property="fromToLabel" destination="bp8-MU-Z3U" id="utt-2a-cSa"/>
+                <outlet property="timeLabel" destination="uoc-yo-oBt" id="dBB-TI-f57"/>
+            </connections>
+            <point key="canvasLocation" x="543" y="420"/>
+        </tableViewCell>
+    </objects>
+</document>

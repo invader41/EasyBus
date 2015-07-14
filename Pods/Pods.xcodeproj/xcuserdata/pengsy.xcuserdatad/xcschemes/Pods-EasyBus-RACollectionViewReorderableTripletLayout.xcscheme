@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FD2EE268BDC345BD9FAD1E40"
+               BlueprintIdentifier = "393EE85655253F5CD72BD252"
                BuildableName = "libPods-EasyBus-RACollectionViewReorderableTripletLayout.a"
                BlueprintName = "Pods-EasyBus-RACollectionViewReorderableTripletLayout"
                ReferencedContainer = "container:Pods.xcodeproj">

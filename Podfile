@@ -9,6 +9,8 @@ pod 'DBGHTMLEntities'
 pod 'SLPagingView'
 pod 'Masonry'
 pod 'RACollectionViewReorderableTripletLayout'
+pod 'AFNetworking'
+pod 'GDataXML-HTML'
 end
 
 target 'EasyBusTests' do

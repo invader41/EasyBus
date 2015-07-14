@@ -9,12 +9,23 @@
 #import "BusFavoritesViewController.h"
 #import <RACollectionViewReorderableTripletLayout.h>
 #import <MJRefresh.h>
-#import "JHService.h"
+#import "BusService.h"
+#import "BaiduService.h"
 #import "AppDelegate.h"
+#import "FavoriteBuslineCell.h"
+#import "FavoriteCarCodeCell.h"
+#import "NearbyBusStationCell.h"
+#define BuslineCellReuseIdentifier @"BuslineCell"
+#define CarCodeCellReuseIdentifier @"CarCodeCell"
+#define NearbyBusStationReuseIdentifier @"NearbyBusStationCell"
 
-@interface BusFavoritesViewController () <RACollectionViewDelegateReorderableTripletLayout, RACollectionViewReorderableTripletLayoutDataSource>
-
-
+@interface BusFavoritesViewController () <RACollectionViewDelegateReorderableTripletLayout, RACollectionViewReorderableTripletLayoutDataSource, favoriteCellDelegate>
+{
+    NSMutableArray *_favoriteBusLines;
+    NSMutableArray *_favoriteCarCodes;
+    BOOL _isEditing;
+}
+- (IBAction)deleteItems:(id)sender;
 @end
 
 @implementation BusFavoritesViewController
@@ -28,13 +39,43 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
-    
+    _favoriteBusLines = [NSMutableArray array];
+    _favoriteCarCodes = [NSMutableArray array];
+    _isEditing= NO;
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    //[self.collectionView registerNib:[[NSBundle mainBundle] loadNibNamed:@"FavoriteBuslineCell" owner:self options:nil].firstObject forCellWithReuseIdentifier:BuslineCellReuseIdentifier];
+    [self.collectionView registerClass:[FavoriteBuslineCell class] forCellWithReuseIdentifier:BuslineCellReuseIdentifier];
+    //[self.collectionView registerNib:[[NSBundle mainBundle] loadNibNamed:@"FavoriteCarCodeCell" owner:self options:nil].firstObject forCellWithReuseIdentifier:CarCodeCellReuseIdentifier];
+    [self.collectionView registerClass:[FavoriteCarCodeCell class] forCellWithReuseIdentifier:CarCodeCellReuseIdentifier];
+    [self.collectionView registerClass:[NearbyBusStationCell class] forCellWithReuseIdentifier:NearbyBusStationReuseIdentifier];
     
     // Do any additional setup after loading the view.
     [self.collectionView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
+    
+    UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+    labelView.text = @"我的收藏";
+    [labelView setFont:[UIFont boldSystemFontOfSize:17]];
+    labelView.textAlignment = NSTextAlignmentCenter;
+    self.navigationItem.titleView = labelView;
+
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.collectionView.header beginRefreshing];
+    [self.navigationItem.titleView setAlpha:0];
+    [self.navigationController.navigationItem.titleView setAlpha:0.8];
+    [UIView animateWithDuration:1 animations:^{
+        [self.navigationItem.titleView setAlpha:1];
+        [self.navigationItem.titleView setNeedsLayout];
+        [self.navigationItem.titleView layoutIfNeeded];
+    } completion:^(BOOL finished)
+     {
+         [self.navigationItem.titleView setAlpha:1];
+     }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -45,13 +86,33 @@ static NSString * const reuseIdentifier = @"Cell";
 
 -(void)refreshData
 {
-    NSFetchRequest *search = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteBusLine"];
-    NSArray *favoriteBusLines = [SharedAppDelegate.managedObjectContext executeFetchRequest:search error:nil];
+    NSFetchRequest *search1 = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteBusLine"];
+    _favoriteBusLines =  [NSMutableArray arrayWithArray:[SharedAppDelegate.managedObjectContext executeFetchRequest:search1 error:nil]];
     
-    search = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteCarCode"];
-    NSArray *favoriteBusLines = [SharedAppDelegate.managedObjectContext executeFetchRequest:search error:nil];
+    NSFetchRequest *search2 = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteCarCode"];
+    _favoriteCarCodes = [NSMutableArray arrayWithArray:[SharedAppDelegate.managedObjectContext executeFetchRequest:search2 error:nil]];
+    
+    [self.collectionView reloadData];
+    [self.collectionView.header endRefreshing];
 }
 
+-(void)deleteButtonClickedAt:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == 1)
+    {
+        FavoriteBusLine *object = _favoriteBusLines[indexPath.row];
+        [SharedAppDelegate.managedObjectContext deleteObject:object];
+        [_favoriteBusLines removeObjectAtIndex:indexPath.row];
+    }
+    if(indexPath.section == 2)
+    {
+        FavoriteCarCode *object = _favoriteCarCodes[indexPath.row];
+        [SharedAppDelegate.managedObjectContext deleteObject:object];
+        [_favoriteCarCodes removeObjectAtIndex:indexPath.row];
+    }
+    [SharedAppDelegate saveContext];
+    [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
+}
 /*
 #pragma mark - Navigation
 
@@ -64,53 +125,155 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark <UICollectionViewDataSource>
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 3;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
+    if(section == 0)
+    {
+        return 1;
+    }
+    if(section == 1)
+    {
+        return _favoriteBusLines.count;
+    }
+    if(section == 2)
+    {
+        return _favoriteCarCodes.count;
+    }
     return 0;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell
-    
-    return cell;
+    if(indexPath.section == 0)
+    {
+        NearbyBusStationCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NearbyBusStationReuseIdentifier forIndexPath:indexPath];
+        [cell refreshData];
+        return  cell;
+    }
+    if(indexPath.section == 1)
+    {
+        FavoriteBuslineCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:BuslineCellReuseIdentifier forIndexPath:indexPath];
+        //FavoriteBuslineCell *cell = [[FavoriteBuslineCell alloc] initWithFrame:CGRectZero];
+        cell.favoriteBusLine = (FavoriteBusLine *)_favoriteBusLines[indexPath.row];
+        cell.indexPath = indexPath;
+        cell.delegate = self;
+        [cell refreshData];
+        return cell;
+    }
+    if(indexPath.section == 2)
+    {
+        FavoriteCarCodeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CarCodeCellReuseIdentifier forIndexPath:indexPath];
+        cell.favoriteCarCode = (FavoriteCarCode *)_favoriteCarCodes[indexPath.row];
+        cell.indexPath = indexPath;
+        cell.delegate = self;
+        [cell refreshData];
+        return cell;
+    }
+    return nil;
 }
 
-#pragma mark <UICollectionViewDelegate>
+#pragma mark - RACollectionViewDelegateReorderableTripletLayout
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
+- (CGSize)collectionView:(UICollectionView *)collectionView sizeForLargeItemsInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return CGSizeMake(self.view.bounds.size.width, 200);
+    }
+    return RACollectionViewTripletLayoutStyleSquare;
+}//Default to automaticaly grow square !
+- (UIEdgeInsets)insetsForCollectionView:(UICollectionView *)collectionView
+{
+    if(_isEditing)
+        return UIEdgeInsetsMake(15.f, 15.f, 15.f, 15.f);
+    else
+        return UIEdgeInsetsMake(5.f, 5.f, 5.f, 5.f);
 }
-*/
+- (CGFloat)sectionSpacingForCollectionView:(UICollectionView *)collectionView
+{
+    if(_isEditing)
+        return 15.f;
+    else
+        return 5.f;
+}
+- (CGFloat)minimumInteritemSpacingForCollectionView:(UICollectionView *)collectionView
+{
+    if(_isEditing)
+        return 15.f;
+    else
+        return 5.f;
+}
+- (CGFloat)minimumLineSpacingForCollectionView:(UICollectionView *)collectionView
+{
+    if(_isEditing)
+        return 15.f;
+    else
+        return 5.f;
+}
 
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (UIEdgeInsets)autoScrollTrigerEdgeInsets:(UICollectionView *)collectionView
+{
+    return UIEdgeInsetsMake(50.f, 0, 50.f, 0); //Sorry, horizontal scroll is not supported now.
+}
+
+- (UIEdgeInsets)autoScrollTrigerPadding:(UICollectionView *)collectionView
+{
+    return UIEdgeInsetsMake(64.f, 0, 0, 0);
+}
+
+- (CGFloat)reorderingItemAlpha:(UICollectionView *)collectionview
+{
+    return .3f;
+}
+
+
+- (void)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout didEndDraggingItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    //[self.collectionView reloadData];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath didMoveToIndexPath:(NSIndexPath *)toIndexPath
+{
+
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath canMoveToIndexPath:(NSIndexPath *)toIndexPath
+{
+    if(fromIndexPath.section == toIndexPath.section)
+        return YES;
+    else
+        return NO;
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        return NO;
+    }
     return YES;
 }
-*/
 
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
+#pragma mark - actions
+
+- (IBAction)deleteItems:(id)sender
+{
+    [self.collectionView performBatchUpdates:^{
+        if(_isEditing)
+        {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"FavoriteCellEndEditing" object:self];
+        }
+        else
+        {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"FavoriteCellBeginEditing" object:self];
+        }
+        _isEditing = !_isEditing;
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+
 }
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
-
 @end

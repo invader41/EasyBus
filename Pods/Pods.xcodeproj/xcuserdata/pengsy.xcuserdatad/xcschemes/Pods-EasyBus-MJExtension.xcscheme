@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E6DA4161D5EED608CD7809D0"
+               BlueprintIdentifier = "80B249C2669D44F662879E29"
                BuildableName = "libPods-EasyBus-MJExtension.a"
                BlueprintName = "Pods-EasyBus-MJExtension"
                ReferencedContainer = "container:Pods.xcodeproj">
