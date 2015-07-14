@@ -60,7 +60,8 @@
                                                                                                       navBarBackground:[UIColor colorWithRed:0.33 green:0.68 blue:0.91 alpha:1.000]
                                                                                                                  views:views
                                                                                                        showPageControl:YES];
-            [self addSubview:pageView.view];
+            
+            //[self.contentView addSubview:pageView.view];
             [_indicator stopAnimating];
             
         } Failure:^(NSError *error) {
