@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface NearbyBusCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lineLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fromToLabel;
+@property (weak, nonatomic) IBOutlet UILabel *stationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (weak, nonatomic) IBOutlet UIView *topContentView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topContentLeftConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topContentRightConstraint;
 
 @end
