@@ -47,7 +47,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.collectionView registerClass:[FavoriteBuslineCell class] forCellWithReuseIdentifier:BuslineCellReuseIdentifier];
     //[self.collectionView registerNib:[[NSBundle mainBundle] loadNibNamed:@"FavoriteCarCodeCell" owner:self options:nil].firstObject forCellWithReuseIdentifier:CarCodeCellReuseIdentifier];
     [self.collectionView registerClass:[FavoriteCarCodeCell class] forCellWithReuseIdentifier:CarCodeCellReuseIdentifier];
-    [self.collectionView registerClass:[NearbyBusStationCell class] forCellWithReuseIdentifier:NearbyBusStationReuseIdentifier];
     
     // Do any additional setup after loading the view.
     [self.collectionView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
@@ -98,13 +97,13 @@ static NSString * const reuseIdentifier = @"Cell";
 
 -(void)deleteButtonClickedAt:(NSIndexPath *)indexPath
 {
-    if(indexPath.section == 1)
+    if(indexPath.section == 0)
     {
         FavoriteBusLine *object = _favoriteBusLines[indexPath.row];
         [SharedAppDelegate.managedObjectContext deleteObject:object];
         [_favoriteBusLines removeObjectAtIndex:indexPath.row];
     }
-    if(indexPath.section == 2)
+    if(indexPath.section == 1)
     {
         FavoriteCarCode *object = _favoriteCarCodes[indexPath.row];
         [SharedAppDelegate.managedObjectContext deleteObject:object];
@@ -127,20 +126,16 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 3;
+    return 2;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if(section == 0)
     {
-        return 1;
-    }
-    if(section == 1)
-    {
         return _favoriteBusLines.count;
     }
-    if(section == 2)
+    if(section == 1)
     {
         return _favoriteCarCodes.count;
     }
@@ -150,12 +145,6 @@ static NSString * const reuseIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section == 0)
     {
-        NearbyBusStationCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NearbyBusStationReuseIdentifier forIndexPath:indexPath];
-        [cell refreshData];
-        return  cell;
-    }
-    if(indexPath.section == 1)
-    {
         FavoriteBuslineCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:BuslineCellReuseIdentifier forIndexPath:indexPath];
         //FavoriteBuslineCell *cell = [[FavoriteBuslineCell alloc] initWithFrame:CGRectZero];
         cell.favoriteBusLine = (FavoriteBusLine *)_favoriteBusLines[indexPath.row];
@@ -164,7 +153,7 @@ static NSString * const reuseIdentifier = @"Cell";
         [cell refreshData];
         return cell;
     }
-    if(indexPath.section == 2)
+    if(indexPath.section == 1)
     {
         FavoriteCarCodeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CarCodeCellReuseIdentifier forIndexPath:indexPath];
         cell.favoriteCarCode = (FavoriteCarCode *)_favoriteCarCodes[indexPath.row];
@@ -250,9 +239,6 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        return NO;
-    }
     return YES;
 }
 

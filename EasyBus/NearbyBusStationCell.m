@@ -40,36 +40,36 @@
 
 -(void)refreshData
 {
-    [_indicator startAnimating];
-    [[BaiduService SharedInstance] searchNearestStationSuccess:^(NSString *text) {
-        [[BusService SharedInstance] searchStationsByName:text Success:^(NSArray *stations) {
-            NSMutableArray *titles = [NSMutableArray array];
-            NSMutableArray *views = [NSMutableArray array];
-            for(Station *station in stations)
-            {
-                NearbyStationViewController *vc = [[NearbyStationViewController alloc] initWithStationCode:station.stationCode];
-                [views addObject:vc.view];
-                
-                UILabel *navTitleLabel = [UILabel new];
-                navTitleLabel.text = station.station;
-                navTitleLabel.font = [UIFont fontWithName:@"Helvetica" size:20];
-                navTitleLabel.textColor = [UIColor whiteColor];
-                [titles addObject:navTitleLabel];
-            }
-            NearbyStationsPageViewController *pageView = [[NearbyStationsPageViewController alloc] initWithNavBarItems:titles
-                                                                                                      navBarBackground:[UIColor colorWithRed:0.33 green:0.68 blue:0.91 alpha:1.000]
-                                                                                                                 views:views
-                                                                                                       showPageControl:YES];
-            
-            //[self.contentView addSubview:pageView.view];
-            [_indicator stopAnimating];
-            
-        } Failure:^(NSError *error) {
-            [_indicator stopAnimating];
-        }];
-    } Failure:^(NSError *error) {
-        [_indicator stopAnimating];
-    }];
+//    [_indicator startAnimating];
+//    [[BaiduService SharedInstance] searchNearestStationSuccess:^(NSString *text) {
+//        [[BusService SharedInstance] searchStationsByName:text Success:^(NSArray *stations) {
+//            NSMutableArray *titles = [NSMutableArray array];
+//            NSMutableArray *views = [NSMutableArray array];
+//            for(Station *station in stations)
+//            {
+//                NearbyStationViewController *vc = [[NearbyStationViewController alloc] initWithStationCode:station.stationCode];
+//                [views addObject:vc.view];
+//                
+//                UILabel *navTitleLabel = [UILabel new];
+//                navTitleLabel.text = station.station;
+//                navTitleLabel.font = [UIFont fontWithName:@"Helvetica" size:20];
+//                navTitleLabel.textColor = [UIColor whiteColor];
+//                [titles addObject:navTitleLabel];
+//            }
+//            NearbyStationsPageViewController *pageView = [[NearbyStationsPageViewController alloc] initWithNavBarItems:titles
+//                                                                                                      navBarBackground:[UIColor colorWithRed:0.33 green:0.68 blue:0.91 alpha:1.000]
+//                                                                                                                 views:views
+//                                                                                                       showPageControl:YES];
+//            
+//            //[self.contentView addSubview:pageView.view];
+//            [_indicator stopAnimating];
+//            
+//        } Failure:^(NSError *error) {
+//            [_indicator stopAnimating];
+//        }];
+//    } Failure:^(NSError *error) {
+//        [_indicator stopAnimating];
+//    }];
 }
 
 @end

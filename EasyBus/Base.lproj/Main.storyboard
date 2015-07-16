@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hfR-De-tsQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UBJ-ry-J1u">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
@@ -211,14 +211,15 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Be-Q4-HVR">
-                                                    <rect key="frame" x="28" y="7" width="25" height="30"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Be-Q4-HVR">
+                                                    <rect key="frame" x="28" y="11" width="18" height="22"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="BI6-fj-O1A"/>
-                                                        <constraint firstAttribute="height" constant="30" id="C3w-7c-DBz"/>
+                                                        <constraint firstAttribute="width" constant="18" id="BI6-fj-O1A"/>
+                                                        <constraint firstAttribute="height" constant="22" id="C3w-7c-DBz"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="centerX" secondItem="ckG-ew-jaE" secondAttribute="centerX" id="17d-g8-apX"/>
                                                 <constraint firstAttribute="centerY" secondItem="9Be-Q4-HVR" secondAttribute="centerY" id="2gh-ns-9nD"/>
@@ -240,6 +241,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Puk-SW-Rpe" id="WTe-3b-fS3"/>
+                                    <outlet property="delegate" destination="Puk-SW-Rpe" id="GFM-qn-rrX"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -250,6 +255,9 @@
                             <constraint firstItem="G23-x9-H2J" firstAttribute="top" secondItem="VSo-Hd-tgl" secondAttribute="top" id="pJ3-DN-dQJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="G23-x9-H2J" id="iZ9-VI-TjX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPn-0h-3LG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -477,6 +485,36 @@
             </objects>
             <point key="canvasLocation" x="2853" y="546"/>
         </scene>
+        <!--Init Location View Controller-->
+        <scene sceneID="5hd-ly-DRd">
+            <objects>
+                <viewController id="UBJ-ry-J1u" customClass="InitLocationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="leU-tY-DlV"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Yl-43-c4t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AGP-7J-38m">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="BHp-rX-rqf">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="BHp-rX-rqf" secondAttribute="centerX" id="OGO-aT-KYp"/>
+                            <constraint firstAttribute="centerY" secondItem="BHp-rX-rqf" secondAttribute="centerY" id="t1Q-UJ-fZT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="hfR-De-tsQ" kind="presentation" identifier="Start" modalTransitionStyle="crossDissolve" id="h2S-ER-oi5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4hM-pZ-d9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1132" y="507"/>
+        </scene>
         <!--Animated Tab Bar Controller-->
         <scene sceneID="J6F-D2-fnp">
             <objects>
@@ -497,7 +535,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BNA-y6-FoU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-469" y="507"/>
+            <point key="canvasLocation" x="-435" y="507"/>
         </scene>
         <!--Item-->
         <scene sceneID="f4L-3G-2sj">

@@ -13,7 +13,7 @@
 #import <Masonry.h>
 #import "LocationsViewController.h"
 
-@interface NearbyBusesViewController ()<UITableViewDataSource, UITableViewDelegate, UIPopoverPresentationControllerDelegate>
+@interface NearbyBusesViewController ()<UITableViewDataSource, UITableViewDelegate, UIPopoverPresentationControllerDelegate, lcationsViewDelegate>
 {
     UILabel *_locationLabel;
     UITapGestureRecognizer *_singleTapGestureRecognizer;
@@ -75,6 +75,7 @@
     LocationsViewController *locationsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LocationsViewController"];
     locationsVC.modalPresentationStyle = UIModalPresentationPopover;
     UIPopoverPresentationController *popover = locationsVC.popoverPresentationController;
+    popover.backgroundColor = [UIColor darkGrayColor];
     popover.sourceView = self.anchor;
     popover.delegate = self;
     [self presentViewController:locationsVC animated:YES completion:^{
@@ -84,7 +85,21 @@
 
 -(void)refreshData
 {
-    
+    [[BaiduService SharedInstance] searchNearestStationSuccess:^(NSArray *pois) {
+        if(pois .count > 0)
+        {
+            NSString *locationName = pois[0];
+            [[BusService SharedInstance] searchStationsByName:locationName Success:^(NSArray *stations) {
+                
+            } Failure:^(NSError *error) {
+                
+            }];
+            [self.tableView reloadData];
+            [self.tableView.header endRefreshing];
+        }
+    } Failure:^(NSError *error) {
+        [self.tableView.header endRefreshing];
+    }];
 }
 
 #pragma mark - pop
@@ -92,6 +107,13 @@
 -(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller
 {
     return UIModalPresentationNone;
+}
+
+#pragma mark - locationView
+
+-(void)selectedLocation:(NSString *)location
+{
+    
 }
 
 /*

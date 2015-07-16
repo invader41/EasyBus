@@ -24,6 +24,7 @@
               Success:(void (^)(NSArray *stations))success
               Failure:(void (^)(NSError *error))failure;
 
+
 -(void)searchBusStateByStationCode:(NSString *)stationCode
                        Success:(void (^)(NSArray *buses))success
                        Failure:(void (^)(NSError *error))failure;

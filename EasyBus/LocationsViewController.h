@@ -7,6 +7,14 @@
 //
 #import <UIKit/UIKit.h>
 
+@protocol lcationsViewDelegate;
+
 @interface LocationsViewController : UIViewController
+@property (nonatomic, weak) id <lcationsViewDelegate> delegate;
+@end
+
+@protocol lcationsViewDelegate <NSObject>
+
+-(void)selectedLocation:(NSString *)location;
 
 @end
