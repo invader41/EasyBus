@@ -10,6 +10,8 @@
 		A9017C911B56246100FF175B /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9017C901B56246100FF175B /* LocationsViewController.m */; };
 		A9017C941B56490D00FF175B /* NearbyStationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9017C931B56490D00FF175B /* NearbyStationCell.m */; };
 		A9017C971B578BD600FF175B /* InitLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9017C961B578BD600FF175B /* InitLocationViewController.m */; };
+		A9017C991B58A5B100FF175B /* NearbyBusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9017C981B58A5B100FF175B /* NearbyBusCell.xib */; };
+		A9017C9D1B58EE6600FF175B /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A9017C9C1B58EE6600FF175B /* UIColor+RandomColor.m */; };
 		A909C8F81B54F91A00DCCBCA /* NearbyBusesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A909C8F71B54F91A00DCCBCA /* NearbyBusesViewController.m */; };
 		A909C8FB1B54FD7800DCCBCA /* NearbyBusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A909C8FA1B54FD7800DCCBCA /* NearbyBusCell.m */; };
 		A910ADB11B3A7D3C0065B7E8 /* FavoriteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A910ADB01B3A7D3C0065B7E8 /* FavoriteCell.m */; };
@@ -86,6 +88,9 @@
 		A9017C931B56490D00FF175B /* NearbyStationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyStationCell.m; sourceTree = "<group>"; };
 		A9017C951B578BD600FF175B /* InitLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitLocationViewController.h; sourceTree = "<group>"; };
 		A9017C961B578BD600FF175B /* InitLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitLocationViewController.m; sourceTree = "<group>"; };
+		A9017C981B58A5B100FF175B /* NearbyBusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearbyBusCell.xib; sourceTree = "<group>"; };
+		A9017C9B1B58EE6600FF175B /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomColor.h"; sourceTree = "<group>"; };
+		A9017C9C1B58EE6600FF175B /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
 		A909C8F61B54F91A00DCCBCA /* NearbyBusesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyBusesViewController.h; sourceTree = "<group>"; };
 		A909C8F71B54F91A00DCCBCA /* NearbyBusesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyBusesViewController.m; sourceTree = "<group>"; };
 		A909C8F91B54FD7800DCCBCA /* NearbyBusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyBusCell.h; sourceTree = "<group>"; };
@@ -206,6 +211,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9017C9A1B58EDD700FF175B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A9017C9B1B58EE6600FF175B /* UIColor+RandomColor.h */,
+				A9017C9C1B58EE6600FF175B /* UIColor+RandomColor.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		A99029C51B20313A000E5AD9 = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +244,7 @@
 		A99029D01B20313A000E5AD9 /* EasyBus */ = {
 			isa = PBXGroup;
 			children = (
+				A9017C9A1B58EDD700FF175B /* Classes */,
 				A9902A3F1B218409000E5AD9 /* Views */,
 				A9902A371B214335000E5AD9 /* Controllers */,
 				A9902A201B21380F000E5AD9 /* RAMAnimatedTabBarController */,
@@ -456,6 +471,7 @@
 				A909C8FA1B54FD7800DCCBCA /* NearbyBusCell.m */,
 				A9017C921B56490D00FF175B /* NearbyStationCell.h */,
 				A9017C931B56490D00FF175B /* NearbyStationCell.m */,
+				A9017C981B58A5B100FF175B /* NearbyBusCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -579,6 +595,7 @@
 				A99029E01B20313A000E5AD9 /* Main.storyboard in Resources */,
 				A9902A5E1B257BC9000E5AD9 /* mapapi.bundle in Resources */,
 				A9902A6C1B2A7A93000E5AD9 /* BusAndFavoriteCell.xib in Resources */,
+				A9017C991B58A5B100FF175B /* NearbyBusCell.xib in Resources */,
 				A952746A1B3D2FD400C1E8E5 /* BusDistanceCell.xib in Resources */,
 				A99029E51B20313A000E5AD9 /* LaunchScreen.xib in Resources */,
 				A99029E21B20313A000E5AD9 /* Images.xcassets in Resources */,
@@ -648,6 +665,7 @@
 				A94F33B91B3155AF00D7476A /* FavoriteCarCodeCell.m in Sources */,
 				A9902A6B1B2A7A93000E5AD9 /* BusAndFavoriteCell.m in Sources */,
 				A952745D1B3CEFB600C1E8E5 /* NearbyStationsPageViewController.m in Sources */,
+				A9017C9D1B58EE6600FF175B /* UIColor+RandomColor.m in Sources */,
 				A94F33AD1B30087C00D7476A /* TemplatedTintColorButton.m in Sources */,
 				A9902A0E1B2034B5000E5AD9 /* BusService.m in Sources */,
 				A9902A341B21380F000E5AD9 /* RAMItemAnimationProtocol.swift in Sources */,

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface NearbyBusCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *lineLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fromToLabel;
@@ -16,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIView *topContentView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topContentLeftConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topContentRightConstraint;
-
+@property (strong, nonatomic) NSArray *buses;
+-(void)bindData;
 @end

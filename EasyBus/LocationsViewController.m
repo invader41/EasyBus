@@ -28,7 +28,7 @@
     // Do any additional setup after loading the view.
     _stations = [NSArray array];
     [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
-    
+    [self.tableView.header setTextColor:[UIColor whiteColor]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,17 +48,12 @@
 {
 
     [[BaiduService SharedInstance] searchNearestStationSuccess:^(NSArray *pois) {
-        if(pois .count > 0)
-        {
-            NSString *locationName = pois[0];
-            [[BusService SharedInstance] searchStationsByName:locationName Success:^(NSArray *stations) {
-                _stations = stations;
+
+                _stations = pois;
                 [self.tableView reloadData];
                 [self.tableView.header endRefreshing];
-            } Failure:^(NSError *error) {
-                
-            }];
-        }
+
+    
     } Failure:^(NSError *error) {
         [self.tableView.header endRefreshing];
     }];
@@ -87,9 +82,8 @@
     }
     else
     {
-        Station *station = _stations[indexPath.row - 1];
         cell.iconImageView.image = [[UIImage imageNamed:@"07-map-marker"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-        cell.nameLabel.text = [NSString stringWithFormat:@"%@ | %@", station.station, station.point];
+        cell.nameLabel.text = _stations[indexPath.row - 1];
     }
     return cell;
 }

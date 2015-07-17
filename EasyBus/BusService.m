@@ -103,7 +103,8 @@ static BusService* _sharedInstance;
                     
                 }
             }
-            success(stations);
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"station = %@",stationName];
+            success([stations filteredArrayUsingPredicate:predicate]);
         }
         failure(error);
         
@@ -113,6 +114,7 @@ static BusService* _sharedInstance;
     [manager.operationQueue addOperation:operation];
     
 }
+
 
 -(void)searchBusStateByStationCode:(NSString *)stationCode Success:(void (^)(NSArray *))success Failure:(void (^)(NSError *))failure
 {
@@ -132,7 +134,7 @@ static BusService* _sharedInstance;
         GDataXMLDocument *doc = [[GDataXMLDocument alloc]initWithHTMLData:responseObject error:&error];
         if (doc) {
             NSMutableArray *buses = [NSMutableArray array];
-            NSArray *table = [doc nodesForXPath:@"//span[@id='MainContent_DATA']/table" error:NULL];
+            NSArray *table = [doc nodesForXPath:@"//span[@id='MainContent_DATA']/table" error:&error];
             for (GDataXMLElement *node in [table[0] children])
             {
                 if(node == [table[0] children][0])

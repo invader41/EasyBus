@@ -7,9 +7,14 @@
 //
 
 #import "NearbyBusCell.h"
-static CGFloat const kBounceValue = 40.0f;
+#import "Bus.h"
+#import "UIColor+RandomColor.h"
+static CGFloat const kBounceValue = 60.0f;
 
 @interface NearbyBusCell()<UIGestureRecognizerDelegate>
+{
+    int _busIndex;
+}
 @property (nonatomic, strong) UIPanGestureRecognizer *panRecognizer;
 @property (nonatomic, assign) CGPoint panStartPoint;
 @property (nonatomic, assign) CGFloat startingRightLayoutConstraintConstant;
@@ -23,6 +28,8 @@ static CGFloat const kBounceValue = 40.0f;
     self.panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panThisCell:)];
     self.panRecognizer.delegate = self;
     [self.topContentView addGestureRecognizer:self.panRecognizer];
+    [self.topContentView setBackgroundColor:[UIColor randomColor]];
+    _busIndex = 0;
 }
 
 - (void)panThisCell:(UIPanGestureRecognizer *)recognizer {
@@ -47,7 +54,7 @@ static CGFloat const kBounceValue = 40.0f;
         }
             break;
         case UIGestureRecognizerStateEnded:
-            
+            [self panEnded];
             break;
         case UIGestureRecognizerStateCancelled:
             NSLog(@"Pan Cancelled");
@@ -61,9 +68,23 @@ static CGFloat const kBounceValue = 40.0f;
 {
     BOOL panLeft = NO;
     if(self.topContentLeftConstraint.constant > 0)
+    {
         panLeft = YES;
+        if(_busIndex == self.buses.count - 1)
+        {
+            _busIndex = 0;
+        }
+        else
+        {
+            _busIndex ++;
+        }
+        [self bindData];
+    }
     else
+    {
+    
         panLeft = NO;
+    }
     
     self.topContentLeftConstraint.constant = 0;
     self.topContentRightConstraint.constant = 0;
@@ -74,6 +95,21 @@ static CGFloat const kBounceValue = 40.0f;
     }];
 }
 
+-(void)bindData
+{
+    Bus *bus = self.buses[_busIndex];
+    self.lineLabel.text = bus.bus;
+    self.fromToLabel.text = bus.FromTo;
+    self.distanceLabel.text = bus.distance;
+    
+    [self.fromToLabel setAlpha:0];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.fromToLabel setAlpha:1];
+    } completion:^(BOOL finished) {
+        [self.fromToLabel setAlpha:1];
+    }];
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
