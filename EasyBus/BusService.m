@@ -82,31 +82,38 @@ static BusService* _sharedInstance;
         if (doc) {
             NSMutableArray *stations = [NSMutableArray array];
             NSArray *table = [doc nodesForXPath:@"//span[@id='MainContent_DATA']/table" error:NULL];
-            for (GDataXMLElement *node in [table[0] children])
+            if(table.count > 0)
             {
-                if(node == [table[0] children][0])
-                    continue;
-                else
+                for (GDataXMLElement *node in [table[0] children])
                 {
-                    Station *station = [Station new];
-                    GDataXMLElement *_station = node.children[0];
-                    if(_station.children.count > 0)
+                    if(node == [table[0] children][0])
+                        continue;
+                    else
                     {
-                        station.station = [_station.children[0] stringValue] ;
+                        Station *station = [Station new];
+                        GDataXMLElement *_station = node.children[0];
+                        if(_station.children.count > 0)
+                        {
+                            station.station = [_station.children[0] stringValue] ;
+                        }
+                        station.stationCode = [node.children[1] stringValue];
+                        station.local = [node.children[2] stringValue];
+                        station.street = [node.children[3] stringValue];
+                        station.Sections = [node.children[4] stringValue];
+                        station.point = [node.children[5] stringValue];
+                        [stations addObject:station];
+                        
                     }
-                    station.stationCode = [node.children[1] stringValue];
-                    station.local = [node.children[2] stringValue];
-                    station.street = [node.children[3] stringValue];
-                    station.Sections = [node.children[4] stringValue];
-                    station.point = [node.children[5] stringValue];
-                    [stations addObject:station];
-                    
                 }
+                
+                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"station = %@",stationName];
+                success([stations filteredArrayUsingPredicate:predicate]);
             }
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"station = %@",stationName];
-            success([stations filteredArrayUsingPredicate:predicate]);
+            else
+                failure(error);
         }
-        failure(error);
+        else
+            failure(error);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure(error);
@@ -135,30 +142,35 @@ static BusService* _sharedInstance;
         if (doc) {
             NSMutableArray *buses = [NSMutableArray array];
             NSArray *table = [doc nodesForXPath:@"//span[@id='MainContent_DATA']/table" error:&error];
-            for (GDataXMLElement *node in [table[0] children])
+            if(table.count > 0)
             {
-                if(node == [table[0] children][0])
-                    continue;
-                else
+                for (GDataXMLElement *node in [table[0] children])
                 {
-                    Bus *bus = [Bus new];
-                    GDataXMLElement *_bus = node.children[0];
-                    if(_bus.children.count > 0)
+                    if(node == [table[0] children][0])
+                        continue;
+                    else
                     {
-                        bus.bus = [_bus.children[0] stringValue] ;
-                        bus.code = [[_bus.children[0] attributeForName:@"href"].stringValue substringWithRange:NSMakeRange (23, 36)];
+                        Bus *bus = [Bus new];
+                        GDataXMLElement *_bus = node.children[0];
+                        if(_bus.children.count > 0)
+                        {
+                            bus.bus = [_bus.children[0] stringValue] ;
+                            bus.code = [[_bus.children[0] attributeForName:@"href"].stringValue substringWithRange:NSMakeRange (23, 36)];
+                        }
+                        bus.FromTo = [node.children[1] stringValue];
+                        bus.carCode = [node.children[2] stringValue];
+                        bus.time = [node.children[3] stringValue];
+                        bus.distance = [node.children[4] stringValue];
+                        [buses addObject:bus];
                     }
-                    bus.FromTo = [node.children[1] stringValue];
-                    bus.carCode = [node.children[2] stringValue];
-                    bus.time = [node.children[3] stringValue];
-                    bus.distance = [node.children[4] stringValue];
-                    [buses addObject:bus];
                 }
-                
+                success(buses);
             }
-            success(buses);
+            else
+                failure(error);
         }
-        failure(error);
+        else
+            failure(error);
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         failure(error);
@@ -210,26 +222,32 @@ static BusService* _sharedInstance;
         if (doc) {
             NSMutableArray *buses = [NSMutableArray array];
             NSArray *table = [doc nodesForXPath:@"//span[@id='MainContent_DATA']/table" error:NULL];
-            for (GDataXMLElement *node in [table[0] children])
+            if(table.count > 0)
             {
-                if(node == [table[0] children][0])
-                    continue;
-                else
+                for (GDataXMLElement *node in [table[0] children])
                 {
-                    Bus *bus = [Bus new];
-                    GDataXMLElement *_bus = node.children[0];
-                    if(_bus.children.count > 0)
+                    if(node == [table[0] children][0])
+                        continue;
+                    else
                     {
-                        bus.bus = [_bus.children[0] stringValue] ;
-                        bus.code = [[_bus.children[0] attributeForName:@"href"].stringValue substringWithRange:NSMakeRange (23, 36)];
+                        Bus *bus = [Bus new];
+                        GDataXMLElement *_bus = node.children[0];
+                        if(_bus.children.count > 0)
+                        {
+                            bus.bus = [_bus.children[0] stringValue] ;
+                            bus.code = [[_bus.children[0] attributeForName:@"href"].stringValue substringWithRange:NSMakeRange (23, 36)];
+                        }
+                        bus.FromTo = [node.children[1] stringValue];
+                        [buses addObject:bus];
                     }
-                    bus.FromTo = [node.children[1] stringValue];
-                    [buses addObject:bus];
                 }
+                success(buses);
             }
-            success(buses);
+            else
+                failure(error);
         }
-        failure(error);
+        else
+            failure(error);
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure(error);
@@ -280,26 +298,34 @@ static BusService* _sharedInstance;
         if (doc) {
             NSMutableArray *arrivals = [NSMutableArray array];
             NSArray *table = [doc nodesForXPath:@"//span[@id='MainContent_DATA']/table" error:NULL];
-            for (GDataXMLElement *node in [table[0] children])
+            if(table.count > 0)
             {
-                if(node == [table[0] children][0])
-                    continue;
-                else
+                for (GDataXMLElement *node in [table[0] children])
                 {
-                    Arrival *arrival = [Arrival new];
-                    GDataXMLElement *stationName = node.children[0];
-                    if(stationName.children.count > 0)
-                        arrival.stationName = [stationName.children[0] stringValue] ;
-                    arrival.stationCode = [node.children[1] stringValue];
-                    arrival.carCode = [node.children[2] stringValue];
-                    arrival.ArrivalTime = [node.children[3] stringValue];
-                    [arrivals addObject:arrival];
-                }
+                    if(node == [table[0] children][0])
+                        continue;
+                    else
+                    {
+                        Arrival *arrival = [Arrival new];
+                        GDataXMLElement *stationName = node.children[0];
+                        if(stationName.children.count > 0)
+                            arrival.stationName = [stationName.children[0] stringValue] ;
+                        arrival.stationCode = [node.children[1] stringValue];
+                        arrival.carCode = [node.children[2] stringValue];
+                        arrival.ArrivalTime = [node.children[3] stringValue];
+                        [arrivals addObject:arrival];
+                    }
                     
+                }
+                success(arrivals);
             }
-            success(arrivals);
+            else
+            {
+                failure(error);
+            }
         }
-        failure(error);
+        else
+            failure(error);
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         failure(error);

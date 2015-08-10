@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "18DCDF60EFDE3A1986D31966"
+               BlueprintIdentifier = "6A50562BAD078F973CF7B4C7"
                BuildableName = "libPods-EasyBus-DBGHTMLEntities.a"
                BlueprintName = "Pods-EasyBus-DBGHTMLEntities"
                ReferencedContainer = "container:Pods.xcodeproj">

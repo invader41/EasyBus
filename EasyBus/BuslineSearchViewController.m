@@ -7,11 +7,11 @@
 //
 
 #import "BuslineSearchViewController.h"
-#import "BusArrivalPageViewController.h"
+#import "BusLineMapViewController.h"
 #import <AFSwipeToHide/AFSwipeToHide.h>
 #import "BusService.h"
-#import "BusArrivalViewController.h"
 #import <DBGHTMLEntities/DBGHTMLEntityDecoder.h>
+#import <Masonry.h>
 
 @interface BuslineSearchViewController ()<UITableViewDataSource, AFSwipeToHideDelegate, UITableViewDelegate, UIScrollViewDelegate, UISearchBarDelegate>
 {
@@ -67,30 +67,56 @@
     [self updateElements];
     
 
-    UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
-    labelView.text = @"公交线路";
-    [labelView setFont:[UIFont boldSystemFontOfSize:17]];
-    labelView.textAlignment = NSTextAlignmentCenter;
-    self.navigationItem.titleView = labelView;
-    
-    
+//    UILabel *labelView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+//    labelView.text = @"公交线路";
+//    labelView.textColor = [UIColor whiteColor];
+//    [labelView setFont:[UIFont boldSystemFontOfSize:17]];
+//    labelView.textAlignment = NSTextAlignmentCenter;
+//    self.navigationItem.titleView = labelView;
+//    
 
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [self.navigationItem.titleView setAlpha:0];
-    [self.navigationController.navigationItem.titleView setAlpha:0.8];
-    [UIView animateWithDuration:1 animations:^{
-        [self.navigationItem.titleView setAlpha:1];
-        [self.navigationItem.titleView setNeedsLayout];
-        [self.navigationItem.titleView layoutIfNeeded];
-    } completion:^(BOOL finished)
-    {
-        [self.navigationItem.titleView setAlpha:1];
+    UIButton *titleView = [UIButton buttonWithType:UIButtonTypeCustom];
+    titleView.backgroundColor = [UIColor blackColor];
+    
+    UILabel *_locationLabel = [UILabel new];
+    _locationLabel.userInteractionEnabled = YES;
+    [_locationLabel setTextColor:[UIColor whiteColor]];
+    _locationLabel.text = @"线路查询";
+    UIImageView *titleicon = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"titleBarMenuLine"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    titleicon.tintColor = [UIColor whiteColor];
+    
+    [titleView addSubview:titleicon];
+    [titleView addSubview:_locationLabel];
+    
+    [_locationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(titleView);
+        //make.left.equalTo(titleView).offset(20);
     }];
+    [titleicon mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@20);
+        make.width.equalTo(@20);
+        make.left.equalTo(_locationLabel).offset(-24);
+        make.centerY.equalTo(titleView);
+    }];
+    
+    self.navigationItem.titleView = titleView;
+
 }
+
+//-(void)viewDidAppear:(BOOL)animated
+//{
+//    [super viewDidAppear:animated];
+//    [self.navigationItem.titleView setAlpha:0];
+//    [self.navigationController.navigationItem.titleView setAlpha:0.8];
+//    [UIView animateWithDuration:1 animations:^{
+//        [self.navigationItem.titleView setAlpha:1];
+//        [self.navigationItem.titleView setNeedsLayout];
+//        [self.navigationItem.titleView layoutIfNeeded];
+//    } completion:^(BOOL finished)
+//    {
+//        [self.navigationItem.titleView setAlpha:1];
+//    }];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -228,27 +254,11 @@
 {
 
     NSArray *buses = _busSearchResults[_busSearchResults.allKeys[indexPath.row]];
-    NSMutableArray *titles = [NSMutableArray array];
-    NSMutableArray *views = [NSMutableArray array];
-    for(Bus *bus in buses)
-    {
-        BusArrivalViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"BusArrivalViewController"];
-        vc.bus = bus;
-        [views addObject:vc.view];
-        
-        UILabel *navTitleLabel = [UILabel new];
-        navTitleLabel.text = [_decoder decodeString:bus.FromTo];
-        navTitleLabel.font = [UIFont fontWithName:@"Helvetica" size:20];
-        navTitleLabel.textColor = [UIColor whiteColor];
-        [titles addObject:navTitleLabel];
-    }
-    BusArrivalPageViewController *pagerController = [[BusArrivalPageViewController alloc] initWithNavBarItems:titles
-                                                                                             navBarBackground:[UIColor colorWithRed:0.33 green:0.68 blue:0.91 alpha:1.000]
-                                                                                                        views:views
-                                                                                              showPageControl:YES];
-
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:pagerController];
-    [self presentViewController:nav  animated:YES completion:NULL];
+    
+    BusLineMapViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"BusLineMapViewController"];
+    vc.buses = buses;
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:vc  animated:YES completion:NULL];
 }
 
 #pragma mark - table view source delegate

@@ -15,6 +15,7 @@
 @interface LocationsViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *_stations;
+    CLLocationManager *_locationManager;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
@@ -29,6 +30,7 @@
     _stations = [NSArray array];
     [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
     [self.tableView.header setTextColor:[UIColor whiteColor]];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,15 +41,21 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [[BaiduService SharedInstance].locService startUserLocationService];
     [self.tableView.header beginRefreshing];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
 }
 
 #pragma mark - private method
 
 -(void)refreshData
 {
-
-    [[BaiduService SharedInstance] searchNearestStationSuccess:^(NSArray *pois) {
+    [[BaiduService SharedInstance] searchNearestStationAt:[BaiduService SharedInstance].locService.userLocation.location.coordinate
+                                                  Success:^(NSArray *pois) {
 
                 _stations = pois;
                 [self.tableView reloadData];
@@ -59,6 +67,7 @@
     }];
 
 }
+
 
 #pragma mark - tableView
 
@@ -92,7 +101,9 @@
 {
     if(indexPath.row== 0)
     {
-        [self dismissViewControllerAnimated:YES completion:NULL];
+        [self.delegate selectedOtherLocation];
+        [self dismissViewControllerAnimated:NO completion:^{
+        }];
     }
     else
     {

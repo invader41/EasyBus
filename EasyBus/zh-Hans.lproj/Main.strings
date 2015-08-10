@@ -1,0 +1,45 @@
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "11I-0d-gkb"; */
+"11I-0d-gkb.text" = "Title";
+
+/* Class = "UITabBarItem"; title = "换乘方案"; ObjectID = "Ckj-iY-uQk"; */
+"Ckj-iY-uQk.title" = "换乘方案";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "F7k-WD-NYw"; */
+"F7k-WD-NYw.text" = "Title";
+
+/* Class = "UILabel"; text = "15:17:10"; ObjectID = "HEw-Op-3za"; */
+"HEw-Op-3za.text" = "15:17:10";
+
+/* Class = "UISearchBar"; placeholder = "请输入公交号码"; ObjectID = "J8X-VO-rFc"; */
+"J8X-VO-rFc.placeholder" = "请输入公交号码";
+
+/* Class = "UISearchBar"; placeholder = "请输入目的地"; ObjectID = "K3u-t7-eU7"; */
+"K3u-t7-eU7.placeholder" = "请输入目的地";
+
+/* Class = "UITabBarItem"; title = "周边公交"; ObjectID = "PBd-5B-47S"; */
+"PBd-5B-47S.title" = "周边公交";
+
+/* Class = "UINavigationItem"; title = "线路查询"; ObjectID = "Rfh-lO-arS"; */
+"Rfh-lO-arS.title" = "线路查询";
+
+/* Class = "UITabBarItem"; title = "设置"; ObjectID = "Uuo-gu-OXo"; */
+"Uuo-gu-OXo.title" = "设置";
+
+/* Class = "UITextView"; text = "北大方正西"; ObjectID = "XQF-e1-4MW"; */
+"XQF-e1-4MW.text" = "北大方正西";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "aFQ-FN-LoK"; */
+"aFQ-FN-LoK.text" = "Title";
+
+/* Class = "UILabel"; text = "其他位置"; ObjectID = "ckG-ew-jaE"; */
+"ckG-ew-jaE.text" = "其他位置";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hM2-94-yIl"; */
+"hM2-94-yIl.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "线路查询"; ObjectID = "mka-RW-K5a"; */
+"mka-RW-K5a.title" = "线路查询";
+
+/* Class = "UISearchBar"; placeholder = "请输入公交站名"; ObjectID = "s8B-O1-wee"; */
+"s8B-O1-wee.placeholder" = "请输入公交站名";

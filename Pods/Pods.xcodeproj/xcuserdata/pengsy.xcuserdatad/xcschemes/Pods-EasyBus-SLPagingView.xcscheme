@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45785640B145816918ECC03D"
+               BlueprintIdentifier = "1F2A626DD87614EB0E301C03"
                BuildableName = "libPods-EasyBus-SLPagingView.a"
                BlueprintName = "Pods-EasyBus-SLPagingView"
                ReferencedContainer = "container:Pods.xcodeproj">

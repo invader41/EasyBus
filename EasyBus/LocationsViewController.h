@@ -10,11 +10,12 @@
 @protocol locationsViewDelegate;
 
 @interface LocationsViewController : UIViewController
+@property (nonatomic) NSNumber *type;
 @property (nonatomic, weak) id <locationsViewDelegate> delegate;
 @end
 
 @protocol locationsViewDelegate <NSObject>
 
 -(void)selectedLocation:(NSString *)location;
-
+-(void)selectedOtherLocation;
 @end

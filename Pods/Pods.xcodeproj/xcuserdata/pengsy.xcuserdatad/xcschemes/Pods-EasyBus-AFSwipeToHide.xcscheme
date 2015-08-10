@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "55E28C9D8253FFACC5D95267"
+               BlueprintIdentifier = "929723404B483EB76B7D8643"
                BuildableName = "libPods-EasyBus-AFSwipeToHide.a"
                BlueprintName = "Pods-EasyBus-AFSwipeToHide"
                ReferencedContainer = "container:Pods.xcodeproj">

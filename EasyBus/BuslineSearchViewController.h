@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 PSY. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface BuslineSearchViewController : ViewController
+@interface BuslineSearchViewController : UIViewController
 
 @end

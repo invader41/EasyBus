@@ -11,7 +11,8 @@
 
 @implementation FavoriteBusLine
 
-@dynamic busLine;
-@dynamic lineName;
+@dynamic busCode;
+@dynamic busName;
+@dynamic direction;
 
 @end

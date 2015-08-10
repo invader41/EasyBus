@@ -7,20 +7,19 @@
 //
 
 #import "BaiduService.h"
-#import <CoreLocation/CoreLocation.h>
 
-@interface BaiduService()<BMKGeneralDelegate, BMKPoiSearchDelegate, BMKLocationServiceDelegate>
+@interface BaiduService()<BMKPoiSearchDelegate, BMKSuggestionSearchDelegate>
 {
-    BOOL _registed;
+    //BOOL _registed;
 }
-@property (strong, nonatomic) BMKMapManager* mapManager;
-@property (strong, nonatomic) BMKLocationService *locService;
-@property (strong, nonatomic) BMKBusLineSearch* busLineSearcher;
 @property (strong, nonatomic) BMKPoiSearch *poiSearcher;
-@property (nonatomic, copy) StringBlock searchNearestStationSuccessBlock;
+@property (strong, nonatomic) BMKSuggestionSearch *suggestionSearcher;
+@property (nonatomic, copy) ArrayBlock searchNearestStationSuccessBlock;
 @property (nonatomic, copy) FailureBlock searchNearestStationFailureBlock;
-@property (nonatomic, copy) RegistedBlock registedBlock;
-@property (nonatomic, copy) LocateBlock locateBlock;
+@property (nonatomic, copy) ArrayBlock searchStationByNameSuccessBlock;
+@property (nonatomic, copy) FailureBlock searchStationByNameFailureBlock;
+@property (nonatomic, copy) ArrayBlock searchSuggestionsSuccessBlock;
+@property (nonatomic, copy) FailureBlock searchSuggestionsFailureBlock;
 @end
 @implementation BaiduService
 
@@ -41,9 +40,10 @@ static BaiduService* _sharedInstance;
 {
     self = [super init];
     if (self) {
-        _registed = NO;
-        _locationGetted = NO;
-        self.mapManager = [[BMKMapManager alloc]init];
+//        _registed = NO;
+//        _locationGetted = NO;
+//        self.mapManager = [[BMKMapManager alloc]init];
+
     }
     return self;
 }
@@ -51,48 +51,109 @@ static BaiduService* _sharedInstance;
 
 #pragma mark - getter setter
 
+-(BMKPoiSearch *)poiSearcher
+{
+    if(!_poiSearcher)
+    {
+        _poiSearcher =[[BMKPoiSearch alloc]init];
+        _poiSearcher.delegate = self;
+    }
+    return _poiSearcher;
+}
+
+-(BMKSuggestionSearch *)suggestionSearcher
+{
+    if(!_suggestionSearcher)
+    {
+        _suggestionSearcher = [[BMKSuggestionSearch alloc] init];
+        _suggestionSearcher.delegate = self;
+    }
+    return _suggestionSearcher;
+}
+
+-(BMKLocationService *)locService
+{
+    if(!_locService)
+    {
+        _locService = [[BMKLocationService alloc] init];
+    }
+    return _locService;
+}
 
 #pragma mark - private method
--(void)regist:(RegistedBlock)registed
-{
-    self.registedBlock = registed;
-    if(!_registed)
-        [self.mapManager start:@"yYZuIH7pkU0GtiO5pfDDI0in" generalDelegate:self];
-    else
-        self.registedBlock(YES);
-}
 
--(void)startUserLocationService:(LocateBlock)located
+-(NSMutableArray *)distinctByName:(NSArray *)array
 {
-    self.locateBlock = located;
-    [BMKLocationService setLocationDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
-    //指定最小距离更新(米)，默认：kCLDistanceFilterNone
-    [BMKLocationService setLocationDistanceFilter:100.f];
-    //初始化检索对象
-    self.poiSearcher =[[BMKPoiSearch alloc]init];
-    self.poiSearcher.delegate = self;
-    //初始化BMKLocationService
-    self.locService = [[BMKLocationService alloc]init];
-    self.locService.delegate = self;
-    //启动LocationService
-    [self.locService startUserLocationService];
-    
+    NSMutableArray *result= [NSMutableArray array];
+    for (int i= 0; i < array.count; i++)
+    {
+        BMKPoiInfo *info = array[i];
+        if(![result containsObject:info.name] && info.epoitype == 1)
+        {
+            [result addObject:info.name];
+        }
+    }
+    return result;
 }
+//-(void)regist:(RegistedBlock)registed
+//{
+//    self.registedBlock = registed;
+//    if(!_registed)
+//        [self.mapManager start:@"yYZuIH7pkU0GtiO5pfDDI0in" generalDelegate:self];
+//    else
+//        self.registedBlock(YES);
+//}
+//
+//-(void)startUserLocationService:(LocateBlock)located
+//{
+//    self.locateBlock = located;
+//    [BMKLocationService setLocationDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
+//    //指定最小距离更新(米)，默认：kCLDistanceFilterNone
+//    [BMKLocationService setLocationDistanceFilter:100.f];
+//    //初始化检索对象
+//    self.poiSearcher =[[BMKPoiSearch alloc]init];
+//    self.poiSearcher.delegate = self;
+//    
+//    //初始化BMKLocationService
+//    self.locService = [[BMKLocationService alloc]init];
+//    self.locService.delegate = self;
+//    //启动LocationService
+//    [self.locService startUserLocationService];
+//    
+//}
 //-(void)registerBaiduService
 //{
 //    _mapManager = [[BMKMapManager alloc]init];
 //    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
 //    _registed = [_mapManager start:@"8KZEMXKZuWcwBpGNsxs2Tywc"  generalDelegate:self];
 //}
+-(void)searchSuggestionsByName:(NSString *)name Success:(ArrayBlock)success Failure:(FailureBlock)failure
+{
+    BMKSuggestionSearchOption* option = [[BMKSuggestionSearchOption alloc] init];
+    option.cityname = @"苏州";
+    option.keyword  = name;
+    self.searchSuggestionsSuccessBlock = success;
+    self.searchSuggestionsFailureBlock = failure;
+    BOOL flag = [self.suggestionSearcher suggestionSearch:option];
+    if(flag)
+    {
+        NSLog(@"建议检索发送成功");
+    }
+    else
+    {
+        NSLog(@"建议检索发送失败");
+    }
+}
 
--(void)searchNearestStationSuccess:(StringBlock)success Failure:(FailureBlock)failure
+-(void)searchNearestStationAt:(CLLocationCoordinate2D)location Success:(ArrayBlock)success Failure:(FailureBlock)failure
 {
     //发起检索
     BMKNearbySearchOption *option = [[BMKNearbySearchOption alloc]init];
-    option.location = self.locService.userLocation.location.coordinate;
-    option.radius = 500;
+    option.location = location;
+    option.radius = 1000;
     option.sortType = BMK_POI_SORT_BY_DISTANCE;
     option.keyword = @"公交站";
+    option.pageCapacity = 50;
     self.searchNearestStationSuccessBlock = success;
     self.searchNearestStationFailureBlock = failure;
     BOOL flag = [self.poiSearcher poiSearchNearBy:option];
@@ -108,6 +169,41 @@ static BaiduService* _sharedInstance;
     
 }
 
+-(void)searchStationsByName:(NSString *)name Success:(ArrayBlock)success Failure:(FailureBlock)failure
+{
+    BMKCitySearchOption *option = [[BMKCitySearchOption alloc] init];
+    option.city = @"苏州";
+    option.keyword = name;
+    self.searchStationByNameSuccessBlock = success;
+    self.searchStationByNameFailureBlock = failure;
+    
+    BOOL flag = [self.poiSearcher poiSearchInCity:option];
+    if(flag)
+    {
+        NSLog(@"城市检索发送成功");
+    }
+    else
+    {
+        failure(nil);
+        NSLog(@"城市检索发送失败");
+    }
+    
+}
+
+#pragma mark - BMKSuggestionDelegate
+
+//实现Delegate处理回调结果
+- (void)onGetSuggestionResult:(BMKSuggestionSearch*)searcher result:(BMKSuggestionResult*)result errorCode:(BMKSearchErrorCode)error{
+    if (error == BMK_SEARCH_NO_ERROR) {
+        //在此处理正常结果
+        self.searchSuggestionsSuccessBlock(result.keyList);
+    }
+    else {
+        self.searchSuggestionsFailureBlock(nil);
+        NSLog(@"抱歉，未找到结果");
+    }
+}
+
 #pragma mark - BMKPoiSearchDelegate
 
 -(void)onGetPoiResult:(BMKPoiSearch *)searcher result:(BMKPoiResult *)poiResult errorCode:(BMKSearchErrorCode)errorCode
@@ -115,69 +211,96 @@ static BaiduService* _sharedInstance;
     if (errorCode == BMK_SEARCH_NO_ERROR) {
         //在此处理正常结果
         //BMKPoiInfo *poiInfo;
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"epoitype = 1"];
-        self.searchNearestStationSuccessBlock([[[poiResult.poiInfoList filteredArrayUsingPredicate:predicate] valueForKeyPath:@"@distinctUnionOfObjects.name"] reverseObjectEnumerator].allObjects);
-        
+        //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"epoitype = 1"];
+        if(self.searchNearestStationSuccessBlock)
+        {
+            self.searchNearestStationSuccessBlock([self distinctByName:poiResult.poiInfoList]);
+            self.searchNearestStationSuccessBlock = nil;
+            self.searchNearestStationFailureBlock = nil;
+        }
+        if(self.searchStationByNameSuccessBlock)
+        {
+            self.searchStationByNameSuccessBlock([self distinctByName:poiResult.poiInfoList]);
+            self.searchStationByNameSuccessBlock = nil;
+            self.searchStationByNameFailureBlock = nil;
+        }
     }
     else if (errorCode == BMK_SEARCH_AMBIGUOUS_KEYWORD){
         //当在设置城市未找到结果，但在其他城市找到结果时，回调建议检索城市列表
         // result.cityList;
-        self.searchNearestStationFailureBlock(nil);
+        if(self.searchNearestStationSuccessBlock)
+        {
+            self.searchNearestStationFailureBlock(nil);
+            self.searchNearestStationSuccessBlock = nil;
+            self.searchNearestStationFailureBlock = nil;
+        }
+        if(self.searchStationByNameSuccessBlock)
+        {
+            self.searchStationByNameFailureBlock(nil);
+            self.searchStationByNameSuccessBlock = nil;
+            self.searchStationByNameFailureBlock = nil;
+        }
         NSLog(@"起始点有歧义");
     } else {
-        self.searchNearestStationFailureBlock(nil);
+        if(self.searchNearestStationSuccessBlock)
+        {
+            self.searchNearestStationSuccessBlock(nil);
+            self.searchNearestStationSuccessBlock = nil;
+            self.searchNearestStationFailureBlock = nil;
+        }
+        if(self.searchStationByNameSuccessBlock)
+        {
+            self.searchStationByNameSuccessBlock(nil);
+            self.searchStationByNameSuccessBlock = nil;
+            self.searchStationByNameFailureBlock = nil;
+        }
         NSLog(@"抱歉，未找到结果");
     }
 }
 
 
-#pragma mark - BMKLocationServiceDelegate
+//#pragma mark - BMKLocationServiceDelegate
+//
+//- (void)didUpdateUserHeading:(BMKUserLocation *)userLocation
+//{
+//    //NSLog(@"heading is %@",userLocation.heading);
+//}
+////处理位置坐标更新
+//- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
+//{
+//
+//}
+//
+//-(void)didFailToLocateUserWithError:(NSError *)error
+//{
+//
+//}
 
-- (void)didUpdateUserHeading:(BMKUserLocation *)userLocation
-{
-    //NSLog(@"heading is %@",userLocation.heading);
-}
-//处理位置坐标更新
-- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
-{
-    if(!self.locationGetted)
-    {
-        self.locationGetted = YES;
-        self.locateBlock(YES);
-    }
-    //NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
-}
-
--(void)didFailToLocateUserWithError:(NSError *)error
-{
-    self.locateBlock(NO);
-}
-
-#pragma mark - BMKGeneralDelegate
-- (void)onGetNetworkState:(int)iError
-{
-    if (0 == iError) {
-         NSLog(@"联网成功");
-    }
-    else{
-        NSLog(@"联网失败");
-        self.registedBlock(NO);
-    }
-    
-}
-
-- (void)onGetPermissionState:(int)iError
-{
-    if (0 == iError) {
-        NSLog(@"授权成功");
-        _registed = YES;
-        //设置定位精确度，默认：kCLLocationAccuracyBest
-
-        self.registedBlock(YES);
-    }
-    else {
-        NSLog(@"授权失败");
-        self.registedBlock(NO);
-    }
-}
+//#pragma mark - BMKGeneralDelegate
+//- (void)onGetNetworkState:(int)iError
+//{
+//    if (0 == iError) {
+//         NSLog(@"联网成功");
+//    }
+//    else{
+//        NSLog(@"联网失败");
+//        self.registedBlock(NO);
+//    }
+//    
+//}
+//
+//- (void)onGetPermissionState:(int)iError
+//{
+//    if (0 == iError) {
+//        NSLog(@"授权成功");
+//        _registed = YES;
+//        //设置定位精确度，默认：kCLLocationAccuracyBest
+//
+//        self.registedBlock(YES);
+//    }
+//    else {
+//        NSLog(@"授权失败");
+//        self.registedBlock(NO);
+//    }
+//}
 @end

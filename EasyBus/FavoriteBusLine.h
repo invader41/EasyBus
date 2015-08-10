@@ -12,6 +12,7 @@
 
 @interface FavoriteBusLine : NSManagedObject
 
-@property (nonatomic, retain) NSString * busLine;
-@property (nonatomic, retain) NSString * lineName;
+@property (nonatomic, retain) NSString * busCode;
+@property (nonatomic, retain) NSString * busName;
+@property (nonatomic, retain) NSString * direction;
 @end
