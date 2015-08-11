@@ -110,7 +110,7 @@
 //        [self.tableView.footer setTextColor:[UIColor whiteColor]];
 //    }
     [self.tableView.header beginRefreshing];
-    [self refreshArrivals:self.buses[currentBusIndex]];
+    //[self refreshArrivals:self.buses[currentBusIndex]];
     
 }
 
@@ -646,7 +646,7 @@
         {
             currentBusIndex ++;
         }
-        [self refreshArrivals:self.buses[currentBusIndex]];
+        //[self refreshArrivals:self.buses[currentBusIndex]];
     }
 
     //[self.tableView.header setTitle:@"正在切换线路方向" forState:MJRefreshHeaderStateRefreshing];
