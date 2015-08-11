@@ -25,6 +25,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *searchTipButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tipRight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tipBottom;
+@property (weak, nonatomic) IBOutlet UILabel *noResultLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicatorView;
+@property (weak, nonatomic) IBOutlet UIView *maskView;
 
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchViewHeight;
@@ -106,6 +109,12 @@
 //-(void)viewDidAppear:(BOOL)animated
 //{
 //    [super viewDidAppear:animated];
+//    [self.searchBar becomeFirstResponder];
+//}
+
+//-(void)viewDidAppear:(BOOL)animated
+//{
+//    [super viewDidAppear:animated];
 //    [self.navigationItem.titleView setAlpha:0];
 //    [self.navigationController.navigationItem.titleView setAlpha:0.8];
 //    [UIView animateWithDuration:1 animations:^{
@@ -179,8 +188,13 @@
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
+    [self.indicatorView startAnimating];
+    self.noResultLabel.text = @"正在查询";
+    [self.maskView setHidden:NO];
+    
     [searchBar resignFirstResponder];
     [[BusService SharedInstance] searchBuslines:searchBar.text Success:^(NSArray *lines) {
+        [self.indicatorView stopAnimating];
         [_busSearchResults removeAllObjects];
         for(Bus *bus in lines)
         {
@@ -193,7 +207,9 @@
         
         [self.tableView reloadData];
     } Failure:^(NSError *error) {
-        
+        [self.indicatorView stopAnimating];
+        self.noResultLabel.text = @"网络错误，请重试";
+        [self.maskView setHidden:NO];
     }];
 }
 
@@ -202,6 +218,10 @@
     [searchBar resignFirstResponder];
 }
 
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+}
 
 
 #pragma mark - AFUSwipeToHide delegate
@@ -267,6 +287,16 @@
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if(_busSearchResults.allKeys.count > 0)
+    {
+        self.maskView.hidden = YES;
+    }
+    else
+    {
+        [self.indicatorView stopAnimating];
+        self.noResultLabel.text = @"无查询结果";
+        self.maskView.hidden = NO;
+    }
     return _busSearchResults.allKeys.count;
 }
 
@@ -274,6 +304,8 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     cell.textLabel.text = _busSearchResults.allKeys[indexPath.row];
+    Bus *bus = [_busSearchResults[_busSearchResults.allKeys[indexPath.row]] firstObject];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ 区间" ,[bus.FromTo stringByReplacingOccurrencesOfString:@"=>" withString:@" "]];
     return cell;
 }
 

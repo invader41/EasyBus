@@ -27,17 +27,26 @@
     if([self.type  isEqual: @0])
     {
         self.title = @"站台搜索";
+        self.searchBar.placeholder = @"请输入站台名称";
     }
     if([self.type  isEqual: @1])
     {
         self.title = @"位置搜索";
+        self.searchBar.placeholder = @"请输入位置名称";
     }
     _stationsSearchResult = [NSArray array];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.searchBar becomeFirstResponder];
 }
 
 #pragma mark - private method

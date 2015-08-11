@@ -12,7 +12,7 @@
 #import "FavoriteBusLine.h"
 #import "AppDelegate.h"
 static CGFloat const kBounceValue = 60.0f;
-static CGFloat const kIgnoreValue = 15.0f;
+static CGFloat const kIgnoreValue = 0.0f;
 
 @interface NearbyBusCell()<UIGestureRecognizerDelegate>
 {
@@ -80,8 +80,8 @@ static CGFloat const kIgnoreValue = 15.0f;
         case UIGestureRecognizerStateChanged: {
             CGPoint currentPoint = [recognizer translationInView:self.topContentView];
             CGFloat deltaX = currentPoint.x - self.panStartPoint.x;
-            CGFloat deltaY = currentPoint.y - self.panStartPoint.y;
-            if(ABS(deltaX) > kIgnoreValue && ABS(deltaY) < kIgnoreValue)
+            if((ABS([recognizer velocityInView:self.topContentView].x) > 240 && ABS([recognizer velocityInView:self.topContentView].y) < 200)
+               || self.topContentLeftConstraint.constant != 0)
             {
                 if(deltaX > 0)
                 {
@@ -234,8 +234,9 @@ static CGFloat const kIgnoreValue = 15.0f;
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
-    if(self.topContentLeftConstraint.constant > 0)
-        return  NO;
+    //[otherGestureRecognizer requireGestureRecognizerToFail:gestureRecognizer];
+    if(self.topContentLeftConstraint.constant != 0)
+        return NO;
     else
         return YES;
 }

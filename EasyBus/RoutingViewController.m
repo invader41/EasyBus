@@ -18,6 +18,9 @@
     NSArray *_stationsSearchResult;
     BaiduService *_baiduService;
 }
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicatorView;
+@property (weak, nonatomic) IBOutlet UILabel *indicatorLabel;
+@property (weak, nonatomic) IBOutlet UIView *maskView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeight;
 @property (weak, nonatomic) IBOutlet UISearchBar *destinationSearchBar;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -121,6 +124,27 @@
     
 }
 
+#pragma mark - web delegate
+
+-(void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [self.indicatorView startAnimating];
+    self.indicatorLabel.text = @"正在查询路线";
+    self.maskView.hidden = NO;
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    self.maskView.hidden = YES;
+}
+
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [self.indicatorView stopAnimating];
+    self.indicatorLabel.text = @"网络连接错误，请重试";
+    self.maskView.hidden = NO;
+}
+
 #pragma mark - pop
 
 -(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller
@@ -174,6 +198,13 @@
     }];
 }
 
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    self.tableViewHeight.constant = 0;
+    searchBar.text = @"";
+    [searchBar resignFirstResponder];
+}
+
 #pragma mark - table view delegate
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -208,7 +239,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"SearchStations"])
+    if ([segue.identifier isEqualToString:@"SearchLocations"])
     {
         id vc = [segue destinationViewController];
         [vc setValue:self forKey:@"delegate"];

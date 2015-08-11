@@ -47,6 +47,7 @@
     [super viewDidLoad];
     self.tipLabelBottom.constant = -44;
     
+
     _unfiltedBuses = [NSMutableArray array];
     _filtedBusesDic = [NSMutableDictionary dictionary];
     _displayFavorite = NO;

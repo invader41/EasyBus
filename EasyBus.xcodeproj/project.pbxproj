@@ -26,10 +26,8 @@
 		A99029E21B20313A000E5AD9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99029E11B20313A000E5AD9 /* Images.xcassets */; };
 		A99029E51B20313A000E5AD9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99029E31B20313A000E5AD9 /* LaunchScreen.xib */; };
 		A99029F11B20313A000E5AD9 /* EasyBusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A99029F01B20313A000E5AD9 /* EasyBusTests.m */; };
-		A9902A081B2033A5000E5AD9 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9902A031B20333D000E5AD9 /* AdSupport.framework */; };
 		A9902A091B2033B0000E5AD9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9902A051B20334C000E5AD9 /* CoreLocation.framework */; };
 		A9902A0A1B2033C6000E5AD9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9902A011B203324000E5AD9 /* CoreTelephony.framework */; };
-		A9902A0B1B2033D9000E5AD9 /* JuheApisSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A99029FF1B2032DD000E5AD9 /* JuheApisSDK.a */; };
 		A9902A0E1B2034B5000E5AD9 /* BusService.m in Sources */ = {isa = PBXBuildFile; fileRef = A9902A0D1B2034B5000E5AD9 /* BusService.m */; };
 		A9902A121B2039E6000E5AD9 /* Bus.m in Sources */ = {isa = PBXBuildFile; fileRef = A9902A111B2039E6000E5AD9 /* Bus.m */; };
 		A9902A151B203B9B000E5AD9 /* CommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9902A141B203B9B000E5AD9 /* CommonModel.m */; };
@@ -112,11 +110,7 @@
 		A99029EA1B20313A000E5AD9 /* EasyBusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyBusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99029EF1B20313A000E5AD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99029F01B20313A000E5AD9 /* EasyBusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyBusTests.m; sourceTree = "<group>"; };
-		A99029FD1B2032DD000E5AD9 /* JHAPISDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAPISDK.h; sourceTree = "<group>"; };
-		A99029FE1B2032DD000E5AD9 /* JHOpenidSupplier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHOpenidSupplier.h; sourceTree = "<group>"; };
-		A99029FF1B2032DD000E5AD9 /* JuheApisSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = JuheApisSDK.a; sourceTree = "<group>"; };
 		A9902A011B203324000E5AD9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		A9902A031B20333D000E5AD9 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		A9902A051B20334C000E5AD9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A9902A0C1B2034B5000E5AD9 /* BusService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusService.h; sourceTree = "<group>"; };
 		A9902A0D1B2034B5000E5AD9 /* BusService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusService.m; sourceTree = "<group>"; };
@@ -180,10 +174,8 @@
 				A9902A581B257B5D000E5AD9 /* SystemConfiguration.framework in Frameworks */,
 				A9902A561B257B4D000E5AD9 /* OpenGLES.framework in Frameworks */,
 				A9902A541B257B40000E5AD9 /* QuartzCore.framework in Frameworks */,
-				A9902A0B1B2033D9000E5AD9 /* JuheApisSDK.a in Frameworks */,
 				A9902A0A1B2033C6000E5AD9 /* CoreTelephony.framework in Frameworks */,
 				A9902A091B2033B0000E5AD9 /* CoreLocation.framework in Frameworks */,
-				A9902A081B2033A5000E5AD9 /* AdSupport.framework in Frameworks */,
 				F12FFECDA723618D95C54AF7 /* libPods-EasyBus.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,32 +273,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A99029FA1B2032DD000E5AD9 /* JuheApisSDK */ = {
-			isa = PBXGroup;
-			children = (
-				A99029FB1B2032DD000E5AD9 /* include */,
-				A99029FF1B2032DD000E5AD9 /* JuheApisSDK.a */,
-			);
-			path = JuheApisSDK;
-			sourceTree = "<group>";
-		};
-		A99029FB1B2032DD000E5AD9 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				A99029FC1B2032DD000E5AD9 /* JuheApisSDK */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		A99029FC1B2032DD000E5AD9 /* JuheApisSDK */ = {
-			isa = PBXGroup;
-			children = (
-				A99029FD1B2032DD000E5AD9 /* JHAPISDK.h */,
-				A99029FE1B2032DD000E5AD9 /* JHOpenidSupplier.h */,
-			);
-			path = JuheApisSDK;
-			sourceTree = "<group>";
-		};
 		A9902A071B203365000E5AD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,9 +282,7 @@
 				A9902A571B257B5D000E5AD9 /* SystemConfiguration.framework */,
 				A9902A551B257B4D000E5AD9 /* OpenGLES.framework */,
 				A9902A531B257B40000E5AD9 /* QuartzCore.framework */,
-				A99029FA1B2032DD000E5AD9 /* JuheApisSDK */,
 				A9902A051B20334C000E5AD9 /* CoreLocation.framework */,
-				A9902A031B20333D000E5AD9 /* AdSupport.framework */,
 				A9902A011B203324000E5AD9 /* CoreTelephony.framework */,
 				A7188B4F7DF113E8714A89A8 /* libPods-EasyBus.a */,
 			);

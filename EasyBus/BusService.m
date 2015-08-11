@@ -28,7 +28,7 @@ static BusService* _sharedInstance;
 {
     self = [super init];
     if (self) {
-        [[JHOpenidSupplier shareSupplier] registerJuheAPIByOpenId:OPENID];
+
     }
     return self;
 }

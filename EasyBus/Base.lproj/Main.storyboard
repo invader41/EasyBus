@@ -25,13 +25,39 @@
                                     <outlet property="delegate" destination="4iI-pT-DQe" id="7Px-eY-2Jb"/>
                                 </connections>
                             </webView>
-                            <searchBar contentMode="redraw" placeholder="请输入目的地" translatesAutoresizingMaskIntoConstraints="NO" id="K3u-t7-eU7">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGS-IH-10v">
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入目的地" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcr-xL-qkm">
+                                        <rect key="frame" x="222" y="262" width="156" height="32"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FL0-S5-rMB">
+                                        <rect key="frame" x="194" y="268" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="jqh-gB-fE3"/>
+                                            <constraint firstAttribute="height" constant="20" id="rlY-Dh-SEk"/>
+                                        </constraints>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="rcr-xL-qkm" secondAttribute="centerX" id="4R7-Xz-tDV"/>
+                                    <constraint firstAttribute="centerY" secondItem="FL0-S5-rMB" secondAttribute="centerY" id="dgx-Ea-Rco"/>
+                                    <constraint firstAttribute="centerY" secondItem="rcr-xL-qkm" secondAttribute="centerY" id="rvD-gr-6Lr"/>
+                                    <constraint firstItem="rcr-xL-qkm" firstAttribute="leading" secondItem="FL0-S5-rMB" secondAttribute="trailing" constant="8" id="sAq-r3-3wN"/>
+                                </constraints>
+                            </view>
+                            <searchBar contentMode="redraw" barStyle="black" placeholder="请输入目的地" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K3u-t7-eU7">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="7n2-ze-1ZM"/>
                                 </constraints>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
                                     <outlet property="delegate" destination="4iI-pT-DQe" id="MrB-Uk-8bs"/>
                                 </connections>
@@ -45,10 +71,10 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="36" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="NsO-dp-LKX">
-                                <rect key="frame" x="8" y="108" width="584" height="240"/>
+                                <rect key="frame" x="8" y="108" width="584" height="185"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="sfO-jZ-uKv"/>
+                                    <constraint firstAttribute="height" constant="185" id="sfO-jZ-uKv"/>
                                 </constraints>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -76,6 +102,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="AGS-IH-10v" firstAttribute="top" secondItem="Odv-2t-5yn" secondAttribute="top" constant="44" id="2qF-0L-zLi"/>
                             <constraint firstAttribute="trailing" secondItem="K3u-t7-eU7" secondAttribute="trailing" id="3vs-3Z-Wu0"/>
                             <constraint firstItem="97K-W7-Lar" firstAttribute="top" secondItem="Odv-2t-5yn" secondAttribute="top" constant="44" id="50N-sF-uOR"/>
                             <constraint firstItem="f0X-Uj-F2i" firstAttribute="bottom" secondItem="3MU-f8-z49" secondAttribute="top" id="5pA-UN-bgI"/>
@@ -83,10 +110,13 @@
                             <constraint firstItem="97K-W7-Lar" firstAttribute="leading" secondItem="Odv-2t-5yn" secondAttribute="leading" id="NK3-hl-H3M"/>
                             <constraint firstAttribute="trailing" secondItem="97K-W7-Lar" secondAttribute="trailing" id="P0s-lx-iK1"/>
                             <constraint firstItem="NsO-dp-LKX" firstAttribute="top" secondItem="K3u-t7-eU7" secondAttribute="bottom" id="TG5-up-VIs"/>
+                            <constraint firstAttribute="bottom" secondItem="AGS-IH-10v" secondAttribute="bottom" id="X1y-2M-s9l"/>
                             <constraint firstAttribute="bottom" secondItem="97K-W7-Lar" secondAttribute="bottom" id="XK7-Pb-faF"/>
+                            <constraint firstItem="AGS-IH-10v" firstAttribute="leading" secondItem="Odv-2t-5yn" secondAttribute="leading" id="dA2-Ce-DwR"/>
                             <constraint firstItem="K3u-t7-eU7" firstAttribute="leading" secondItem="Odv-2t-5yn" secondAttribute="leading" id="fhn-Rx-YJj"/>
                             <constraint firstItem="NsO-dp-LKX" firstAttribute="leading" secondItem="Odv-2t-5yn" secondAttribute="leading" constant="8" id="vEE-US-0ay"/>
                             <constraint firstAttribute="centerX" secondItem="3MU-f8-z49" secondAttribute="centerX" id="vkf-fu-gT3"/>
+                            <constraint firstAttribute="trailing" secondItem="AGS-IH-10v" secondAttribute="trailing" id="xtb-OT-2TO"/>
                             <constraint firstAttribute="trailing" secondItem="NsO-dp-LKX" secondAttribute="trailing" constant="8" id="yX5-sv-0Wl"/>
                         </constraints>
                     </view>
@@ -94,6 +124,9 @@
                     <connections>
                         <outlet property="anchor" destination="3MU-f8-z49" id="Y1K-2D-Or3"/>
                         <outlet property="destinationSearchBar" destination="K3u-t7-eU7" id="lfE-hi-xmP"/>
+                        <outlet property="indicatorLabel" destination="rcr-xL-qkm" id="gYO-9g-ehC"/>
+                        <outlet property="indicatorView" destination="FL0-S5-rMB" id="hEx-vg-1Fj"/>
+                        <outlet property="maskView" destination="AGS-IH-10v" id="7Rn-QG-2gL"/>
                         <outlet property="stationsTableView" destination="NsO-dp-LKX" id="Qj5-G0-gO4"/>
                         <outlet property="tableViewHeight" destination="sfO-jZ-uKv" id="fa5-3K-NUT"/>
                         <outlet property="webView" destination="97K-W7-Lar" id="KA7-wx-RLi"/>
@@ -125,7 +158,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="UI5-PJ-nlD">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="d9K-3Z-uYe" id="V4a-o9-0q2"/>
@@ -145,8 +178,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UI5-PJ-nlD" firstAttribute="leading" secondItem="Ari-lJ-LkK" secondAttribute="leading" id="40A-NE-nmG"/>
-                            <constraint firstItem="UI5-PJ-nlD" firstAttribute="top" secondItem="p5I-zc-Hup" secondAttribute="bottom" id="6pb-4R-kit"/>
-                            <constraint firstAttribute="bottom" secondItem="UI5-PJ-nlD" secondAttribute="bottom" id="AdU-At-3IG"/>
+                            <constraint firstItem="UI5-PJ-nlD" firstAttribute="top" secondItem="p5I-zc-Hup" secondAttribute="bottom" id="4zF-FB-6Bj"/>
+                            <constraint firstItem="KWV-n9-Ox2" firstAttribute="top" secondItem="UI5-PJ-nlD" secondAttribute="bottom" id="9L0-tx-pUm"/>
                             <constraint firstAttribute="centerX" secondItem="leT-fr-6Bq" secondAttribute="centerX" id="Dwz-Ar-kiN"/>
                             <constraint firstItem="KWV-n9-Ox2" firstAttribute="top" secondItem="PUr-hF-FRJ" secondAttribute="bottom" constant="4" id="PIv-Ru-ip7"/>
                             <constraint firstAttribute="centerX" secondItem="PUr-hF-FRJ" secondAttribute="centerX" id="RJF-VO-C4A"/>
@@ -359,11 +392,11 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WOm-98-yVx">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WOm-98-yVx">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="aFQ-FN-LoK" style="IBUITableViewCellStyleDefault" id="Y3a-YX-IFH">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="aFQ-FN-LoK" detailTextLabel="SYi-zj-u9S" style="IBUITableViewCellStyleSubtitle" id="Y3a-YX-IFH">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y3a-YX-IFH" id="It9-Og-zw8">
@@ -372,6 +405,13 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aFQ-FN-LoK">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SYi-zj-u9S">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -379,13 +419,39 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" placeholder="请输入公交号码" translatesAutoresizingMaskIntoConstraints="NO" id="J8X-VO-rFc">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9nc-mt-DqY">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入公交号码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxo-0e-ge7">
+                                        <rect key="frame" x="209" y="284" width="182" height="32"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aK3-Iz-7cR">
+                                        <rect key="frame" x="181" y="290" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="gM5-NF-inL"/>
+                                            <constraint firstAttribute="height" constant="20" id="zNH-St-Krk"/>
+                                        </constraints>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="aK3-Iz-7cR" secondAttribute="centerY" id="FDW-xa-VRg"/>
+                                    <constraint firstItem="jxo-0e-ge7" firstAttribute="leading" secondItem="aK3-Iz-7cR" secondAttribute="trailing" constant="8" id="d28-Dt-b0E"/>
+                                    <constraint firstAttribute="centerX" secondItem="jxo-0e-ge7" secondAttribute="centerX" id="phd-9L-c55"/>
+                                    <constraint firstAttribute="centerY" secondItem="jxo-0e-ge7" secondAttribute="centerY" id="sRd-6O-Chb"/>
+                                </constraints>
+                            </view>
+                            <searchBar contentMode="redraw" barStyle="black" placeholder="请输入公交号码" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J8X-VO-rFc">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="14D-Wd-fGv"/>
                                 </constraints>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qim-WY-PJ5">
                                 <rect key="frame" x="549" y="498" width="44" height="44"/>
@@ -407,8 +473,12 @@
                             <constraint firstItem="KEH-Uc-f7C" firstAttribute="top" secondItem="Qim-WY-PJ5" secondAttribute="bottom" constant="9" id="6bt-fs-NK0"/>
                             <constraint firstAttribute="bottom" secondItem="WOm-98-yVx" secondAttribute="bottom" id="93g-GK-lRC"/>
                             <constraint firstItem="WOm-98-yVx" firstAttribute="leading" secondItem="hee-gH-tGG" secondAttribute="leading" id="9q6-xH-Njr"/>
+                            <constraint firstItem="9nc-mt-DqY" firstAttribute="leading" secondItem="hee-gH-tGG" secondAttribute="leading" id="AXE-YV-OLE"/>
+                            <constraint firstAttribute="trailing" secondItem="9nc-mt-DqY" secondAttribute="trailing" id="Cqo-4h-ZTu"/>
                             <constraint firstAttribute="trailing" secondItem="J8X-VO-rFc" secondAttribute="trailing" id="Eiy-nZ-Hvj"/>
+                            <constraint firstAttribute="bottom" secondItem="9nc-mt-DqY" secondAttribute="bottom" id="Lgh-9s-AxR"/>
                             <constraint firstItem="WOm-98-yVx" firstAttribute="top" secondItem="hee-gH-tGG" secondAttribute="top" id="Tvt-Mb-C2a"/>
+                            <constraint firstItem="9nc-mt-DqY" firstAttribute="top" secondItem="hee-gH-tGG" secondAttribute="top" id="ajN-ef-TNj"/>
                             <constraint firstAttribute="trailing" secondItem="WOm-98-yVx" secondAttribute="trailing" id="mfi-m8-gwt"/>
                             <constraint firstItem="J8X-VO-rFc" firstAttribute="leading" secondItem="hee-gH-tGG" secondAttribute="leading" id="xSY-Si-r3r"/>
                             <constraint firstItem="J8X-VO-rFc" firstAttribute="top" secondItem="hkG-2c-89c" secondAttribute="bottom" id="zcH-T2-mPE"/>
@@ -416,6 +486,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="线路查询" id="Rfh-lO-arS"/>
                     <connections>
+                        <outlet property="indicatorView" destination="aK3-Iz-7cR" id="bvG-xJ-ckw"/>
+                        <outlet property="maskView" destination="9nc-mt-DqY" id="C0N-Fk-JoS"/>
+                        <outlet property="noResultLabel" destination="jxo-0e-ge7" id="wzP-qb-pbs"/>
                         <outlet property="searchBar" destination="J8X-VO-rFc" id="1Ou-9l-zfi"/>
                         <outlet property="searchTipButton" destination="Qim-WY-PJ5" id="a60-rV-fgp"/>
                         <outlet property="searchViewHeight" destination="14D-Wd-fGv" id="uIN-MD-oGa"/>
@@ -628,7 +701,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="GbL-dt-9R4" secondAttribute="trailing" id="60I-zs-BpP"/>
                             <constraint firstItem="FxI-up-zIG" firstAttribute="top" secondItem="GbL-dt-9R4" secondAttribute="bottom" id="FOH-Ot-U6z"/>
@@ -642,7 +715,6 @@
                             <constraint firstAttribute="trailing" secondItem="8LX-z5-6TH" secondAttribute="trailing" id="vuw-Ea-lQg"/>
                         </constraints>
                     </view>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
                         <outlet property="favoriteButton" destination="l93-6H-h9z" id="qLK-so-drU"/>
                         <outlet property="formToLabel" destination="O4v-JD-XT4" id="cB2-hq-E41"/>
@@ -928,6 +1000,6 @@
         <image name="titleBarMenuLine" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kcx-TX-BAK"/>
+        <segue reference="nlF-rk-6tn"/>
     </inferredMetricsTieBreakers>
 </document>

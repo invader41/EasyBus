@@ -12,8 +12,6 @@
 #import "Station.h"
 #import "Arrival.h"
 #import "LineInfo.h"
-#import "JHAPISDK.h"
-#import "JHOpenidSupplier.h"
 #define OPENID @"JHb0fa603485cdfb742565d47dfddb718d"
 #define APPKEY @"088fccfa30aac18c991e3c422cabc9a0"
 

@@ -29,6 +29,8 @@
     [UINavigationBar appearance].barStyle = UIBarStyleBlack;
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
     
+    //[UIButton appearance].tintColor = [UIColor whiteColor];
+    
     //[UINavigationBar appearance].barTintColor = [UIColor darkGrayColor];
     return YES;
 }
