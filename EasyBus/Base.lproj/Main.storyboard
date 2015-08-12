@@ -29,13 +29,13 @@
                                 <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入目的地" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcr-xL-qkm">
-                                        <rect key="frame" x="222" y="262" width="156" height="32"/>
+                                        <rect key="frame" x="222" y="240" width="156" height="32"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FL0-S5-rMB">
-                                        <rect key="frame" x="194" y="268" width="20" height="20"/>
+                                        <rect key="frame" x="194" y="246" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="jqh-gB-fE3"/>
                                             <constraint firstAttribute="height" constant="20" id="rlY-Dh-SEk"/>
@@ -45,8 +45,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="rcr-xL-qkm" secondAttribute="centerX" id="4R7-Xz-tDV"/>
-                                    <constraint firstAttribute="centerY" secondItem="FL0-S5-rMB" secondAttribute="centerY" id="dgx-Ea-Rco"/>
-                                    <constraint firstAttribute="centerY" secondItem="rcr-xL-qkm" secondAttribute="centerY" id="rvD-gr-6Lr"/>
+                                    <constraint firstAttribute="centerY" secondItem="FL0-S5-rMB" secondAttribute="centerY" constant="22" id="dgx-Ea-Rco"/>
+                                    <constraint firstAttribute="centerY" secondItem="rcr-xL-qkm" secondAttribute="centerY" constant="22" id="rvD-gr-6Lr"/>
                                     <constraint firstItem="rcr-xL-qkm" firstAttribute="leading" secondItem="FL0-S5-rMB" secondAttribute="trailing" constant="8" id="sAq-r3-3wN"/>
                                 </constraints>
                             </view>
@@ -55,9 +55,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="7n2-ze-1ZM"/>
                                 </constraints>
-                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="4iI-pT-DQe" id="MrB-Uk-8bs"/>
                                 </connections>
@@ -405,7 +405,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aFQ-FN-LoK">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SYi-zj-u9S">
@@ -449,7 +449,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="14D-Wd-fGv"/>
                                 </constraints>
-                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </searchBar>
@@ -802,7 +802,7 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="谢谢使用，此物乃个人作品，利用业余时间持续改进中，也欢迎来信：steven_peng37@hotmail.com" translatesAutoresizingMaskIntoConstraints="NO" id="90k-sn-jlo">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="谢谢使用，持续改进中，欢迎来信提出意见：steven_peng37@hotmail.com" translatesAutoresizingMaskIntoConstraints="NO" id="90k-sn-jlo">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
