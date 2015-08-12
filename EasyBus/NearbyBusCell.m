@@ -69,7 +69,7 @@ static CGFloat const kIgnoreValue = 0.0f;
 -(void)setEnableGesture:(BOOL)enableGesture
 {
     _enableGesture = enableGesture;
-    self.topContentView.userInteractionEnabled = _enableGesture;
+    self.panRecognizer.enabled = _enableGesture;
 }
 
 - (void)panThisCell:(UIPanGestureRecognizer *)recognizer {

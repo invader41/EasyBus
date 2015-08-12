@@ -7,13 +7,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="88" id="4yB-7V-xVN" customClass="NearbyBusCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="88" id="4yB-7V-xVN" customClass="FavoriteBusCell">
             <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4yB-7V-xVN" id="4lg-oH-ISA">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopAnnotationAlarm" translatesAutoresizingMaskIntoConstraints="NO" id="tpY-jB-qfC">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopAnnotationAlarm" translatesAutoresizingMaskIntoConstraints="NO" id="tpY-jB-qfC">
                         <rect key="frame" x="13" y="29" width="30" height="30"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -95,7 +95,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="6D3-ay-EJS" firstAttribute="top" secondItem="4lg-oH-ISA" secondAttribute="top" id="Gxg-BG-rXH"/>
                     <constraint firstAttribute="bottom" secondItem="6D3-ay-EJS" secondAttribute="bottom" id="IyO-Pl-x3d"/>
@@ -108,6 +108,11 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="alarmImageView" destination="aDF-My-FcS" id="7Cb-m3-E6w"/>
+                <outlet property="distanceLabel" destination="Sz1-c0-9Ed" id="s7U-bK-0DN"/>
+                <outlet property="fromToLabel" destination="9gG-ac-5id" id="mDr-YT-avd"/>
+                <outlet property="lineLabel" destination="nw8-IO-KxG" id="vA9-Kw-bac"/>
+                <outlet property="stationLabel" destination="Q1M-ye-8pm" id="yg0-z2-vr5"/>
                 <outlet property="topContentLeftConstraint" destination="PYX-3v-FTc" id="Wer-PX-kxW"/>
                 <outlet property="topContentRightConstraint" destination="Wdf-4K-ENz" id="Z57-6R-pQK"/>
                 <outlet property="topContentView" destination="6D3-ay-EJS" id="vH3-dB-Nna"/>

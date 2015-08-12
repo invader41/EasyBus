@@ -15,7 +15,6 @@
 		A909C8FB1B54FD7800DCCBCA /* NearbyBusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A909C8FA1B54FD7800DCCBCA /* NearbyBusCell.m */; };
 		A93CFE3D1B6DE7A500F71E57 /* NearbyStationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A93CFE3C1B6DE7A500F71E57 /* NearbyStationCell.m */; };
 		A94F33A71B2FF14F00D7476A /* FavoriteCarCode.m in Sources */ = {isa = PBXBuildFile; fileRef = A94F33A61B2FF14F00D7476A /* FavoriteCarCode.m */; };
-		A94F33AA1B2FF15000D7476A /* FavoriteBusLine.m in Sources */ = {isa = PBXBuildFile; fileRef = A94F33A91B2FF15000D7476A /* FavoriteBusLine.m */; };
 		A94F33AD1B30087C00D7476A /* TemplatedTintColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A94F33AC1B30087C00D7476A /* TemplatedTintColorButton.m */; };
 		A981D63F1B5C9C2300CD6FBA /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = A981D63E1B5C9C2300CD6FBA /* UIImage+Rotate.m */; };
 		A981D6441B5E2DA900CD6FBA /* ArrivalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A981D6421B5E2DA900CD6FBA /* ArrivalCell.m */; };
@@ -58,6 +57,7 @@
 		A9E7048E1B6B18A200AA6ACC /* BusLineAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E7048D1B6B18A200AA6ACC /* BusLineAnnotation.m */; };
 		A9F388AD1B6EFBE900087884 /* RoutingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F388AC1B6EFBE900087884 /* RoutingViewController.m */; };
 		A9F388B21B6F47F300087884 /* BusStationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F388B11B6F47F300087884 /* BusStationSearchViewController.m */; };
+		A9F390A71B7B2CBA00E9EEB8 /* FavoriteBusLine.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F390A61B7B2CBA00E9EEB8 /* FavoriteBusLine.m */; };
 		F12FFECDA723618D95C54AF7 /* libPods-EasyBus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7188B4F7DF113E8714A89A8 /* libPods-EasyBus.a */; };
 /* End PBXBuildFile section */
 
@@ -90,8 +90,6 @@
 		A93CFE3C1B6DE7A500F71E57 /* NearbyStationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyStationCell.m; sourceTree = "<group>"; };
 		A94F33A51B2FF14F00D7476A /* FavoriteCarCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteCarCode.h; sourceTree = "<group>"; };
 		A94F33A61B2FF14F00D7476A /* FavoriteCarCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteCarCode.m; sourceTree = "<group>"; };
-		A94F33A81B2FF15000D7476A /* FavoriteBusLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteBusLine.h; sourceTree = "<group>"; };
-		A94F33A91B2FF15000D7476A /* FavoriteBusLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteBusLine.m; sourceTree = "<group>"; };
 		A94F33AB1B30087C00D7476A /* TemplatedTintColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplatedTintColorButton.h; sourceTree = "<group>"; };
 		A94F33AC1B30087C00D7476A /* TemplatedTintColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplatedTintColorButton.m; sourceTree = "<group>"; };
 		A981D63D1B5C9C2300CD6FBA /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
@@ -161,6 +159,9 @@
 		A9F388AF1B6F090900087884 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A9F388B01B6F47F300087884 /* BusStationSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStationSearchViewController.h; sourceTree = "<group>"; };
 		A9F388B11B6F47F300087884 /* BusStationSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStationSearchViewController.m; sourceTree = "<group>"; };
+		A9F390A41B7B2A5500E9EEB8 /* EasyBus 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "EasyBus 2.xcdatamodel"; sourceTree = "<group>"; };
+		A9F390A51B7B2CBA00E9EEB8 /* FavoriteBusLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteBusLine.h; sourceTree = "<group>"; };
+		A9F390A61B7B2CBA00E9EEB8 /* FavoriteBusLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteBusLine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,10 +303,10 @@
 				A9902A1A1B203D05000E5AD9 /* Arrival.m */,
 				A9902A1C1B203D74000E5AD9 /* LineInfo.h */,
 				A9902A1D1B203D74000E5AD9 /* LineInfo.m */,
-				A94F33A81B2FF15000D7476A /* FavoriteBusLine.h */,
-				A94F33A91B2FF15000D7476A /* FavoriteBusLine.m */,
 				A94F33A51B2FF14F00D7476A /* FavoriteCarCode.h */,
 				A94F33A61B2FF14F00D7476A /* FavoriteCarCode.m */,
+				A9F390A51B7B2CBA00E9EEB8 /* FavoriteBusLine.h */,
+				A9F390A61B7B2CBA00E9EEB8 /* FavoriteBusLine.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -594,7 +595,6 @@
 				A9902A0E1B2034B5000E5AD9 /* BusService.m in Sources */,
 				A9902A341B21380F000E5AD9 /* RAMItemAnimationProtocol.swift in Sources */,
 				A9902A4C1B252D25000E5AD9 /* BaiduService.m in Sources */,
-				A94F33AA1B2FF15000D7476A /* FavoriteBusLine.m in Sources */,
 				A9902A2E1B21380F000E5AD9 /* RAMBounceAnimation.swift in Sources */,
 				A9F388AD1B6EFBE900087884 /* RoutingViewController.m in Sources */,
 				A981D63F1B5C9C2300CD6FBA /* UIImage+Rotate.m in Sources */,
@@ -603,6 +603,7 @@
 				A9902A301B21380F000E5AD9 /* RAMFumeAnimation.swift in Sources */,
 				A981D6441B5E2DA900CD6FBA /* ArrivalCell.m in Sources */,
 				A99029D41B20313A000E5AD9 /* main.m in Sources */,
+				A9F390A71B7B2CBA00E9EEB8 /* FavoriteBusLine.m in Sources */,
 				A9902A331B21380F000E5AD9 /* RAMAnimatedTabBarController.swift in Sources */,
 				A9902A321B21380F000E5AD9 /* RAMTransitionItemAnimation.swift in Sources */,
 				A94F33A71B2FF14F00D7476A /* FavoriteCarCode.m in Sources */,
@@ -848,6 +849,7 @@
 		A99029D81B20313A000E5AD9 /* EasyBus.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				A9F390A41B7B2A5500E9EEB8 /* EasyBus 2.xcdatamodel */,
 				A99029D91B20313A000E5AD9 /* EasyBus.xcdatamodel */,
 			);
 			currentVersion = A99029D91B20313A000E5AD9 /* EasyBus.xcdatamodel */;
