@@ -147,5 +147,11 @@
     }
 }
 
+#pragma mark - Background fetch related delegate
+
+-(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    
+}
 
 @end
