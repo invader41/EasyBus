@@ -479,6 +479,11 @@
 					A99029CD1B20313A000E5AD9 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = EWKW24T8EC;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					A99029E91B20313A000E5AD9 = {
 						CreatedOnToolsVersion = 6.3.1;
