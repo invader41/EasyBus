@@ -51,4 +51,4 @@ SPEC CHECKSUMS:
   RACollectionViewReorderableTripletLayout: 929208004b2f8c2dde12326bf75b11e902959ddf
   SLPagingView: ba9bb6102cb318ce56f23d0a7e49a46ddcdad7e3
 
-COCOAPODS: 0.36.3
+COCOAPODS: 0.38.2
