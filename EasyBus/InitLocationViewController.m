@@ -65,6 +65,13 @@
     }
 }
 
+-(void)didFailToLocateUserWithError:(NSError *)error
+{
+    self.titleLabel.text = @"定位失败";
+    [[BaiduService SharedInstance].locService setDelegate:nil];
+    [self performSegueWithIdentifier:@"Start" sender:self];
+}
+
 //#pragma mark - CLLocationManagerDelegate
 //
 //-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -93,6 +100,7 @@
     }
     else{
         NSLog(@"联网失败");
+        self.titleLabel.text = @"网络连接错误";
     }
     
 }

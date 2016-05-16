@@ -88,10 +88,14 @@
     
     
     //[vc refreshData];
-    [self.tableView addLegendHeaderWithRefreshingBlock:^{
+    
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self refreshArrivals:self.buses[currentBusIndex]];
     }];
-    [self.tableView.header setTextColor:[UIColor whiteColor]];
+    
+    header.stateLabel.textColor = [UIColor whiteColor];
+    header.lastUpdatedTimeLabel.textColor = [UIColor whiteColor];
+    self.tableView.header = header;
 //    if(self.buses.count > 1)
 //    {
 //        [self.tableView addLegendFooterWithRefreshingBlock:^{

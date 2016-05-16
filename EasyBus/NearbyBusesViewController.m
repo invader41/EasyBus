@@ -81,8 +81,9 @@
     
     self.navigationItem.titleView = titleView;
     
-    [self.tableView addLegendHeaderWithRefreshingBlock:^{
-        if(!_displayFavorite)
+    
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+                if(!_displayFavorite)
         {
             if(self.locationName  == nil)
             {
@@ -108,7 +109,10 @@
             [self.tableView.header endRefreshing];
         }
     }];
-    [self.tableView.header setTextColor:[UIColor whiteColor]];
+    
+    header.stateLabel.textColor = [UIColor whiteColor];
+    header.lastUpdatedTimeLabel.textColor = [UIColor whiteColor];
+    self.tableView.header = header;
     [self.tableView.header beginRefreshing];
     
     

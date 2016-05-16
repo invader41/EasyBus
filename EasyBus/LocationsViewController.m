@@ -28,9 +28,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _stations = [NSArray array];
-    [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
-    [self.tableView.header setTextColor:[UIColor whiteColor]];
 
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self refreshData];
+    }];
+    
+    header.stateLabel.textColor = [UIColor whiteColor];
+    header.lastUpdatedTimeLabel.textColor = [UIColor whiteColor];
+    self.tableView.header = header;
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D3394F91BF5A251007F07E1 /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3394EE1BF5A251007F07E1 /* RAMBounceAnimation.swift */; };
+		2D3394FA1BF5A251007F07E1 /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3394F01BF5A251007F07E1 /* RAMFrameItemAnimation.swift */; };
+		2D3394FB1BF5A251007F07E1 /* RAMFumeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3394F21BF5A251007F07E1 /* RAMFumeAnimation.swift */; };
+		2D3394FC1BF5A251007F07E1 /* RAMRotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3394F41BF5A251007F07E1 /* RAMRotationAnimation.swift */; };
+		2D3394FD1BF5A251007F07E1 /* RAMTransitionItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3394F61BF5A251007F07E1 /* RAMTransitionItemAnimation.swift */; };
+		2D3394FE1BF5A251007F07E1 /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3394F71BF5A251007F07E1 /* RAMAnimatedTabBarController.swift */; };
+		2D3394FF1BF5A251007F07E1 /* RAMItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3394F81BF5A251007F07E1 /* RAMItemAnimationProtocol.swift */; };
 		A9017C911B56246100FF175B /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9017C901B56246100FF175B /* LocationsViewController.m */; };
 		A9017C971B578BD600FF175B /* InitLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9017C961B578BD600FF175B /* InitLocationViewController.m */; };
 		A9017C991B58A5B100FF175B /* NearbyBusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9017C981B58A5B100FF175B /* NearbyBusCell.xib */; };
@@ -34,13 +41,6 @@
 		A9902A181B203BD4000E5AD9 /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = A9902A171B203BD4000E5AD9 /* Station.m */; };
 		A9902A1B1B203D05000E5AD9 /* Arrival.m in Sources */ = {isa = PBXBuildFile; fileRef = A9902A1A1B203D05000E5AD9 /* Arrival.m */; };
 		A9902A1E1B203D74000E5AD9 /* LineInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A9902A1D1B203D74000E5AD9 /* LineInfo.m */; };
-		A9902A2E1B21380F000E5AD9 /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9902A231B21380F000E5AD9 /* RAMBounceAnimation.swift */; };
-		A9902A2F1B21380F000E5AD9 /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9902A251B21380F000E5AD9 /* RAMFrameItemAnimation.swift */; };
-		A9902A301B21380F000E5AD9 /* RAMFumeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9902A271B21380F000E5AD9 /* RAMFumeAnimation.swift */; };
-		A9902A311B21380F000E5AD9 /* RAMRotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9902A291B21380F000E5AD9 /* RAMRotationAnimation.swift */; };
-		A9902A321B21380F000E5AD9 /* RAMTransitionItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9902A2B1B21380F000E5AD9 /* RAMTransitionItemAnimation.swift */; };
-		A9902A331B21380F000E5AD9 /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9902A2C1B21380F000E5AD9 /* RAMAnimatedTabBarController.swift */; };
-		A9902A341B21380F000E5AD9 /* RAMItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9902A2D1B21380F000E5AD9 /* RAMItemAnimationProtocol.swift */; };
 		A9902A3A1B214381000E5AD9 /* BuslineSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9902A391B214381000E5AD9 /* BuslineSearchViewController.m */; };
 		A9902A4C1B252D25000E5AD9 /* BaiduService.m in Sources */ = {isa = PBXBuildFile; fileRef = A9902A4B1B252D25000E5AD9 /* BaiduService.m */; };
 		A9902A541B257B40000E5AD9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9902A531B257B40000E5AD9 /* QuartzCore.framework */; };
@@ -72,6 +72,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D3394EE1BF5A251007F07E1 /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBounceAnimation.swift; sourceTree = "<group>"; };
+		2D3394F01BF5A251007F07E1 /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFrameItemAnimation.swift; sourceTree = "<group>"; };
+		2D3394F21BF5A251007F07E1 /* RAMFumeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFumeAnimation.swift; sourceTree = "<group>"; };
+		2D3394F41BF5A251007F07E1 /* RAMRotationAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMRotationAnimation.swift; sourceTree = "<group>"; };
+		2D3394F61BF5A251007F07E1 /* RAMTransitionItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMTransitionItemAnimation.swift; sourceTree = "<group>"; };
+		2D3394F71BF5A251007F07E1 /* RAMAnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarController.swift; sourceTree = "<group>"; };
+		2D3394F81BF5A251007F07E1 /* RAMItemAnimationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMItemAnimationProtocol.swift; sourceTree = "<group>"; };
 		4AB9B78ADDC7A5687BAF4135 /* Pods-EasyBus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBus.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyBus/Pods-EasyBus.release.xcconfig"; sourceTree = "<group>"; };
 		783D7B94F8C8DAA7363D7870 /* Pods-EasyBus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyBus/Pods-EasyBus.debug.xcconfig"; sourceTree = "<group>"; };
 		A7188B4F7DF113E8714A89A8 /* libPods-EasyBus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyBus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,13 +132,6 @@
 		A9902A1C1B203D74000E5AD9 /* LineInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineInfo.h; sourceTree = "<group>"; };
 		A9902A1D1B203D74000E5AD9 /* LineInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineInfo.m; sourceTree = "<group>"; };
 		A9902A1F1B2047E4000E5AD9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		A9902A231B21380F000E5AD9 /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBounceAnimation.swift; sourceTree = "<group>"; };
-		A9902A251B21380F000E5AD9 /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFrameItemAnimation.swift; sourceTree = "<group>"; };
-		A9902A271B21380F000E5AD9 /* RAMFumeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFumeAnimation.swift; sourceTree = "<group>"; };
-		A9902A291B21380F000E5AD9 /* RAMRotationAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMRotationAnimation.swift; sourceTree = "<group>"; };
-		A9902A2B1B21380F000E5AD9 /* RAMTransitionItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMTransitionItemAnimation.swift; sourceTree = "<group>"; };
-		A9902A2C1B21380F000E5AD9 /* RAMAnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarController.swift; sourceTree = "<group>"; };
-		A9902A2D1B21380F000E5AD9 /* RAMItemAnimationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMItemAnimationProtocol.swift; sourceTree = "<group>"; };
 		A9902A381B214381000E5AD9 /* BuslineSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuslineSearchViewController.h; sourceTree = "<group>"; };
 		A9902A391B214381000E5AD9 /* BuslineSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuslineSearchViewController.m; sourceTree = "<group>"; };
 		A9902A3E1B215C32000E5AD9 /* EasyBus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EasyBus-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -190,6 +190,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D3394EB1BF5A251007F07E1 /* RAMAnimatedTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				2D3394EC1BF5A251007F07E1 /* Animations */,
+				2D3394F71BF5A251007F07E1 /* RAMAnimatedTabBarController.swift */,
+				2D3394F81BF5A251007F07E1 /* RAMItemAnimationProtocol.swift */,
+			);
+			path = RAMAnimatedTabBarController;
+			sourceTree = "<group>";
+		};
+		2D3394EC1BF5A251007F07E1 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				2D3394ED1BF5A251007F07E1 /* BounceAnimation */,
+				2D3394EF1BF5A251007F07E1 /* FrameAnimation */,
+				2D3394F11BF5A251007F07E1 /* FumeAnimation */,
+				2D3394F31BF5A251007F07E1 /* RotationAnimation */,
+				2D3394F51BF5A251007F07E1 /* TransitionAniamtions */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		2D3394ED1BF5A251007F07E1 /* BounceAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				2D3394EE1BF5A251007F07E1 /* RAMBounceAnimation.swift */,
+			);
+			path = BounceAnimation;
+			sourceTree = "<group>";
+		};
+		2D3394EF1BF5A251007F07E1 /* FrameAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				2D3394F01BF5A251007F07E1 /* RAMFrameItemAnimation.swift */,
+			);
+			path = FrameAnimation;
+			sourceTree = "<group>";
+		};
+		2D3394F11BF5A251007F07E1 /* FumeAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				2D3394F21BF5A251007F07E1 /* RAMFumeAnimation.swift */,
+			);
+			path = FumeAnimation;
+			sourceTree = "<group>";
+		};
+		2D3394F31BF5A251007F07E1 /* RotationAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				2D3394F41BF5A251007F07E1 /* RAMRotationAnimation.swift */,
+			);
+			path = RotationAnimation;
+			sourceTree = "<group>";
+		};
+		2D3394F51BF5A251007F07E1 /* TransitionAniamtions */ = {
+			isa = PBXGroup;
+			children = (
+				2D3394F61BF5A251007F07E1 /* RAMTransitionItemAnimation.swift */,
+			);
+			path = TransitionAniamtions;
+			sourceTree = "<group>";
+		};
 		A9017C9A1B58EDD700FF175B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,10 +287,10 @@
 		A99029D01B20313A000E5AD9 /* EasyBus */ = {
 			isa = PBXGroup;
 			children = (
+				2D3394EB1BF5A251007F07E1 /* RAMAnimatedTabBarController */,
 				A9017C9A1B58EDD700FF175B /* Classes */,
 				A9902A3F1B218409000E5AD9 /* Views */,
 				A9902A371B214335000E5AD9 /* Controllers */,
-				A9902A201B21380F000E5AD9 /* RAMAnimatedTabBarController */,
 				A9902A0F1B20381E000E5AD9 /* Models */,
 				A99029D51B20313A000E5AD9 /* AppDelegate.h */,
 				A99029D61B20313A000E5AD9 /* AppDelegate.mm */,
@@ -310,68 +372,6 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		A9902A201B21380F000E5AD9 /* RAMAnimatedTabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				A9902A211B21380F000E5AD9 /* Animations */,
-				A9902A2C1B21380F000E5AD9 /* RAMAnimatedTabBarController.swift */,
-				A9902A2D1B21380F000E5AD9 /* RAMItemAnimationProtocol.swift */,
-			);
-			path = RAMAnimatedTabBarController;
-			sourceTree = "<group>";
-		};
-		A9902A211B21380F000E5AD9 /* Animations */ = {
-			isa = PBXGroup;
-			children = (
-				A9902A221B21380F000E5AD9 /* BounceAnimation */,
-				A9902A241B21380F000E5AD9 /* FrameAnimation */,
-				A9902A261B21380F000E5AD9 /* FumeAnimation */,
-				A9902A281B21380F000E5AD9 /* RotationAnimation */,
-				A9902A2A1B21380F000E5AD9 /* TransitionAniamtions */,
-			);
-			path = Animations;
-			sourceTree = "<group>";
-		};
-		A9902A221B21380F000E5AD9 /* BounceAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				A9902A231B21380F000E5AD9 /* RAMBounceAnimation.swift */,
-			);
-			path = BounceAnimation;
-			sourceTree = "<group>";
-		};
-		A9902A241B21380F000E5AD9 /* FrameAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				A9902A251B21380F000E5AD9 /* RAMFrameItemAnimation.swift */,
-			);
-			path = FrameAnimation;
-			sourceTree = "<group>";
-		};
-		A9902A261B21380F000E5AD9 /* FumeAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				A9902A271B21380F000E5AD9 /* RAMFumeAnimation.swift */,
-			);
-			path = FumeAnimation;
-			sourceTree = "<group>";
-		};
-		A9902A281B21380F000E5AD9 /* RotationAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				A9902A291B21380F000E5AD9 /* RAMRotationAnimation.swift */,
-			);
-			path = RotationAnimation;
-			sourceTree = "<group>";
-		};
-		A9902A2A1B21380F000E5AD9 /* TransitionAniamtions */ = {
-			isa = PBXGroup;
-			children = (
-				A9902A2B1B21380F000E5AD9 /* RAMTransitionItemAnimation.swift */,
-			);
-			path = TransitionAniamtions;
-			sourceTree = "<group>";
-		};
 		A9902A371B214335000E5AD9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +439,7 @@
 				A99029CB1B20313A000E5AD9 /* Frameworks */,
 				A99029CC1B20313A000E5AD9 /* Resources */,
 				0A144F257D1A8769F97B6CC0 /* Copy Pods Resources */,
+				5EF1B5B4F9ADD819FCC19A2A /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -473,12 +474,13 @@
 		A99029C61B20313A000E5AD9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = PSY;
 				TargetAttributes = {
 					A99029CD1B20313A000E5AD9 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = EWKW24T8EC;
+						DevelopmentTeam = 55YYYMX9ZE;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -565,6 +567,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyBus/Pods-EasyBus-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5EF1B5B4F9ADD819FCC19A2A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyBus/Pods-EasyBus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -574,6 +591,7 @@
 			files = (
 				A9902A121B2039E6000E5AD9 /* Bus.m in Sources */,
 				A9E704391B60917C00AA6ACC /* HorizontalCell.m in Sources */,
+				2D3394FF1BF5A251007F07E1 /* RAMItemAnimationProtocol.swift in Sources */,
 				A9E704531B6A1E3100AA6ACC /* IndexAnnotationView.m in Sources */,
 				A9902A3A1B214381000E5AD9 /* BuslineSearchViewController.m in Sources */,
 				A909C8F81B54F91A00DCCBCA /* NearbyBusesViewController.m in Sources */,
@@ -583,30 +601,29 @@
 				A9017C971B578BD600FF175B /* InitLocationViewController.m in Sources */,
 				A9902A1B1B203D05000E5AD9 /* Arrival.m in Sources */,
 				A9E7044D1B68BE6800AA6ACC /* FavoriteBusCell.m in Sources */,
-				A9902A311B21380F000E5AD9 /* RAMRotationAnimation.swift in Sources */,
 				A99029D71B20313A000E5AD9 /* AppDelegate.mm in Sources */,
-				A9902A2F1B21380F000E5AD9 /* RAMFrameItemAnimation.swift in Sources */,
 				A9E7048E1B6B18A200AA6ACC /* BusLineAnnotation.m in Sources */,
 				A909C8FB1B54FD7800DCCBCA /* NearbyBusCell.m in Sources */,
+				2D3394FC1BF5A251007F07E1 /* RAMRotationAnimation.swift in Sources */,
 				A9017C9D1B58EE6600FF175B /* UIColor+RandomColor.m in Sources */,
 				A94F33AD1B30087C00D7476A /* TemplatedTintColorButton.m in Sources */,
 				A93CFE3D1B6DE7A500F71E57 /* NearbyStationCell.m in Sources */,
 				A9902A0E1B2034B5000E5AD9 /* BusService.m in Sources */,
-				A9902A341B21380F000E5AD9 /* RAMItemAnimationProtocol.swift in Sources */,
 				A9902A4C1B252D25000E5AD9 /* BaiduService.m in Sources */,
 				A94F33AA1B2FF15000D7476A /* FavoriteBusLine.m in Sources */,
-				A9902A2E1B21380F000E5AD9 /* RAMBounceAnimation.swift in Sources */,
+				2D3394FA1BF5A251007F07E1 /* RAMFrameItemAnimation.swift in Sources */,
 				A9F388AD1B6EFBE900087884 /* RoutingViewController.m in Sources */,
 				A981D63F1B5C9C2300CD6FBA /* UIImage+Rotate.m in Sources */,
 				A9902A151B203B9B000E5AD9 /* CommonModel.m in Sources */,
 				A9902A181B203BD4000E5AD9 /* Station.m in Sources */,
-				A9902A301B21380F000E5AD9 /* RAMFumeAnimation.swift in Sources */,
+				2D3394FE1BF5A251007F07E1 /* RAMAnimatedTabBarController.swift in Sources */,
+				2D3394FD1BF5A251007F07E1 /* RAMTransitionItemAnimation.swift in Sources */,
 				A981D6441B5E2DA900CD6FBA /* ArrivalCell.m in Sources */,
 				A99029D41B20313A000E5AD9 /* main.m in Sources */,
-				A9902A331B21380F000E5AD9 /* RAMAnimatedTabBarController.swift in Sources */,
-				A9902A321B21380F000E5AD9 /* RAMTransitionItemAnimation.swift in Sources */,
 				A94F33A71B2FF14F00D7476A /* FavoriteCarCode.m in Sources */,
+				2D3394F91BF5A251007F07E1 /* RAMBounceAnimation.swift in Sources */,
 				A9F388B21B6F47F300087884 /* BusStationSearchViewController.m in Sources */,
+				2D3394FB1BF5A251007F07E1 /* RAMFumeAnimation.swift in Sources */,
 				A9902A1E1B203D74000E5AD9 /* LineInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -738,6 +755,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaiduMap_IOSSDK_v2.8.1_Lib/Release-iphoneos",
@@ -749,7 +768,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/JuheApisSDK",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = PSY.EasyBus.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "EasyBus/EasyBus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -762,6 +783,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaiduMap_IOSSDK_v2.8.1_Lib/Release-iphoneos",
@@ -773,7 +796,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/JuheApisSDK",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = PSY.EasyBus.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "EasyBus/EasyBus-Bridging-Header.h";
 			};
 			name = Release;
