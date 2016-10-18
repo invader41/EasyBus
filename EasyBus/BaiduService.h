@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <BaiduMapAPI/BMapKit.h>
+#import <BaiduMapKit/BaiduMapAPI_Location/BMKLocationService.h>
 typedef void (^ArrayBlock)(NSArray *pois);
 typedef void (^FailureBlock)(NSError *error);
 typedef void (^RegistedBlock)(BOOL successd);

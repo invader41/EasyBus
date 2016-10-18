@@ -7,7 +7,11 @@
 //
 
 #import "BusLineMapViewController.h"
-#import <BaiduMapAPI/BMapKit.h>
+#import <BaiduMapKit/BaiduMapAPI_Map/BMKMapView.h>
+#import <BaiduMapKit/BaiduMapAPI_Search/BMKBusLineSearch.h>
+#import <BaiduMapKit/BaiduMapAPI_Search/BMKPoiSearch.h>
+#import <BaiduMapKit/BaiduMapAPI_Map/BMKArclineView.h>
+#import <BaiduMapKit/BaiduMapAPI_Map/BMKPolylineView.h>
 #import <MJRefresh.h>
 #import "UIImage+Rotate.h"
 #import "BusService.h"
@@ -95,7 +99,7 @@
     
     header.stateLabel.textColor = [UIColor whiteColor];
     header.lastUpdatedTimeLabel.textColor = [UIColor whiteColor];
-    self.tableView.header = header;
+    self.tableView.mj_header = header;
 //    if(self.buses.count > 1)
 //    {
 //        [self.tableView addLegendFooterWithRefreshingBlock:^{
@@ -113,7 +117,7 @@
 //        [self.tableView.footer setTitle:@"正在切换线路方向" forState:MJRefreshFooterStateRefreshing];
 //        [self.tableView.footer setTextColor:[UIColor whiteColor]];
 //    }
-    [self.tableView.header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
     //[self refreshArrivals:self.buses[currentBusIndex]];
     
 }
@@ -161,14 +165,14 @@
             [self.formToLabel setAlpha:1];
         }];
         [self loadMap];
-        [self.tableView.header endRefreshing];
+        [self.tableView.mj_header endRefreshing];
         //[self.tableView.footer endRefreshing];
 //        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
         [_arrivalCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:currentStationIndex inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
 
     } Failure:^(NSError *error)
     {
-        [self.tableView.header endRefreshing];
+        [self.tableView.mj_header endRefreshing];
         //[self.tableView.footer endRefreshing];
         //[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }];
@@ -654,7 +658,7 @@
     }
 
     //[self.tableView.header setTitle:@"正在切换线路方向" forState:MJRefreshHeaderStateRefreshing];
-    [self.tableView.header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
 
 }
 @end

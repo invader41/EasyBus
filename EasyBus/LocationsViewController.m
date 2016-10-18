@@ -35,7 +35,7 @@
     
     header.stateLabel.textColor = [UIColor whiteColor];
     header.lastUpdatedTimeLabel.textColor = [UIColor whiteColor];
-    self.tableView.header = header;
+    self.tableView.mj_header = header;
     
 }
 
@@ -48,7 +48,7 @@
 {
     [super viewDidAppear:animated];
     [[BaiduService SharedInstance].locService startUserLocationService];
-    [self.tableView.header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
@@ -65,11 +65,11 @@
 
                 _stations = pois;
                 [self.tableView reloadData];
-                [self.tableView.header endRefreshing];
+                [self.tableView.mj_header endRefreshing];
 
     
     } Failure:^(NSError *error) {
-        [self.tableView.header endRefreshing];
+        [self.tableView.mj_header endRefreshing];
     }];
 
 }

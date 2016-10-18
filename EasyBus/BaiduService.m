@@ -7,6 +7,8 @@
 //
 
 #import "BaiduService.h"
+#import <BaiduMapKit/BaiduMapAPI_Search/BMKPoiSearch.h>
+#import <BaiduMapKit/BaiduMapAPI_Search/BMKSuggestionSearch.h>
 
 @interface BaiduService()<BMKPoiSearchDelegate, BMKSuggestionSearchDelegate>
 {

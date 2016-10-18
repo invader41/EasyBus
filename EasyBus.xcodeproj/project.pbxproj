@@ -7,13 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D3394F91BF5A251007F07E1 /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3394EE1BF5A251007F07E1 /* RAMBounceAnimation.swift */; };
-		2D3394FA1BF5A251007F07E1 /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3394F01BF5A251007F07E1 /* RAMFrameItemAnimation.swift */; };
-		2D3394FB1BF5A251007F07E1 /* RAMFumeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3394F21BF5A251007F07E1 /* RAMFumeAnimation.swift */; };
-		2D3394FC1BF5A251007F07E1 /* RAMRotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3394F41BF5A251007F07E1 /* RAMRotationAnimation.swift */; };
-		2D3394FD1BF5A251007F07E1 /* RAMTransitionItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3394F61BF5A251007F07E1 /* RAMTransitionItemAnimation.swift */; };
-		2D3394FE1BF5A251007F07E1 /* RAMAnimatedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3394F71BF5A251007F07E1 /* RAMAnimatedTabBarController.swift */; };
-		2D3394FF1BF5A251007F07E1 /* RAMItemAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3394F81BF5A251007F07E1 /* RAMItemAnimationProtocol.swift */; };
+		2DC4F2D31D6D34EA003F7762 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DC4F2D21D6D34EA003F7762 /* LaunchScreen.storyboard */; };
 		A9017C911B56246100FF175B /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9017C901B56246100FF175B /* LocationsViewController.m */; };
 		A9017C971B578BD600FF175B /* InitLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9017C961B578BD600FF175B /* InitLocationViewController.m */; };
 		A9017C991B58A5B100FF175B /* NearbyBusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9017C981B58A5B100FF175B /* NearbyBusCell.xib */; };
@@ -31,7 +25,6 @@
 		A99029DA1B20313A000E5AD9 /* EasyBus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A99029D81B20313A000E5AD9 /* EasyBus.xcdatamodeld */; };
 		A99029E01B20313A000E5AD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99029DE1B20313A000E5AD9 /* Main.storyboard */; };
 		A99029E21B20313A000E5AD9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99029E11B20313A000E5AD9 /* Images.xcassets */; };
-		A99029E51B20313A000E5AD9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99029E31B20313A000E5AD9 /* LaunchScreen.xib */; };
 		A99029F11B20313A000E5AD9 /* EasyBusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A99029F01B20313A000E5AD9 /* EasyBusTests.m */; };
 		A9902A091B2033B0000E5AD9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9902A051B20334C000E5AD9 /* CoreLocation.framework */; };
 		A9902A0A1B2033C6000E5AD9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9902A011B203324000E5AD9 /* CoreTelephony.framework */; };
@@ -48,12 +41,10 @@
 		A9902A581B257B5D000E5AD9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9902A571B257B5D000E5AD9 /* SystemConfiguration.framework */; };
 		A9902A5A1B257B65000E5AD9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9902A591B257B65000E5AD9 /* CoreGraphics.framework */; };
 		A9902A5C1B257B74000E5AD9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9902A5B1B257B74000E5AD9 /* Security.framework */; };
-		A9902A5E1B257BC9000E5AD9 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A9902A5D1B257BC9000E5AD9 /* mapapi.bundle */; };
 		A9A5A1E71B5C850100751D61 /* BusLineMapViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A9A5A1E61B5C850100751D61 /* BusLineMapViewController.mm */; };
 		A9E704391B60917C00AA6ACC /* HorizontalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E704381B60917C00AA6ACC /* HorizontalCell.m */; };
 		A9E7044D1B68BE6800AA6ACC /* FavoriteBusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E7044B1B68BE6800AA6ACC /* FavoriteBusCell.m */; };
 		A9E7044E1B68BE6800AA6ACC /* FavoriteBusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E7044C1B68BE6800AA6ACC /* FavoriteBusCell.xib */; };
-		A9E704501B69F4B000AA6ACC /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E7044F1B69F4B000AA6ACC /* BaiduMapAPI.framework */; };
 		A9E704531B6A1E3100AA6ACC /* IndexAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E704521B6A1E3100AA6ACC /* IndexAnnotationView.m */; };
 		A9E7048E1B6B18A200AA6ACC /* BusLineAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E7048D1B6B18A200AA6ACC /* BusLineAnnotation.m */; };
 		A9F388AD1B6EFBE900087884 /* RoutingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F388AC1B6EFBE900087884 /* RoutingViewController.m */; };
@@ -72,13 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D3394EE1BF5A251007F07E1 /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBounceAnimation.swift; sourceTree = "<group>"; };
-		2D3394F01BF5A251007F07E1 /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFrameItemAnimation.swift; sourceTree = "<group>"; };
-		2D3394F21BF5A251007F07E1 /* RAMFumeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFumeAnimation.swift; sourceTree = "<group>"; };
-		2D3394F41BF5A251007F07E1 /* RAMRotationAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMRotationAnimation.swift; sourceTree = "<group>"; };
-		2D3394F61BF5A251007F07E1 /* RAMTransitionItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMTransitionItemAnimation.swift; sourceTree = "<group>"; };
-		2D3394F71BF5A251007F07E1 /* RAMAnimatedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMAnimatedTabBarController.swift; sourceTree = "<group>"; };
-		2D3394F81BF5A251007F07E1 /* RAMItemAnimationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMItemAnimationProtocol.swift; sourceTree = "<group>"; };
+		2DC4F2D21D6D34EA003F7762 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AB9B78ADDC7A5687BAF4135 /* Pods-EasyBus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBus.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyBus/Pods-EasyBus.release.xcconfig"; sourceTree = "<group>"; };
 		783D7B94F8C8DAA7363D7870 /* Pods-EasyBus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyBus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyBus/Pods-EasyBus.debug.xcconfig"; sourceTree = "<group>"; };
 		A7188B4F7DF113E8714A89A8 /* libPods-EasyBus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyBus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +98,6 @@
 		A99029D91B20313A000E5AD9 /* EasyBus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyBus.xcdatamodel; sourceTree = "<group>"; };
 		A99029DF1B20313A000E5AD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A99029E11B20313A000E5AD9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A99029E41B20313A000E5AD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A99029EA1B20313A000E5AD9 /* EasyBusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyBusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99029EF1B20313A000E5AD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99029F01B20313A000E5AD9 /* EasyBusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyBusTests.m; sourceTree = "<group>"; };
@@ -142,7 +126,6 @@
 		A9902A571B257B5D000E5AD9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A9902A591B257B65000E5AD9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A9902A5B1B257B74000E5AD9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		A9902A5D1B257BC9000E5AD9 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = "BaiduMap_IOSSDK_v2.7.0_Lib/Release-iphoneos/BaiduMapAPI.framework/Resources/mapapi.bundle"; sourceTree = "<group>"; };
 		A9A5A1E51B5C850100751D61 /* BusLineMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusLineMapViewController.h; sourceTree = "<group>"; };
 		A9A5A1E61B5C850100751D61 /* BusLineMapViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BusLineMapViewController.mm; sourceTree = "<group>"; };
 		A9E704371B60917C00AA6ACC /* HorizontalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalCell.h; sourceTree = "<group>"; };
@@ -150,7 +133,6 @@
 		A9E7044A1B68BE6800AA6ACC /* FavoriteBusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteBusCell.h; sourceTree = "<group>"; };
 		A9E7044B1B68BE6800AA6ACC /* FavoriteBusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteBusCell.m; sourceTree = "<group>"; };
 		A9E7044C1B68BE6800AA6ACC /* FavoriteBusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteBusCell.xib; sourceTree = "<group>"; };
-		A9E7044F1B69F4B000AA6ACC /* BaiduMapAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI.framework; path = "BaiduMap_IOSSDK_v2.8.1_Lib/Release-iphoneos/BaiduMapAPI.framework"; sourceTree = "<group>"; };
 		A9E704511B6A1E3100AA6ACC /* IndexAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexAnnotationView.h; sourceTree = "<group>"; };
 		A9E704521B6A1E3100AA6ACC /* IndexAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexAnnotationView.m; sourceTree = "<group>"; };
 		A9E7048C1B6B18A200AA6ACC /* BusLineAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusLineAnnotation.h; sourceTree = "<group>"; };
@@ -158,7 +140,6 @@
 		A9EE1DD01B72FC9700B37AD5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		A9F388AB1B6EFBE900087884 /* RoutingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoutingViewController.h; sourceTree = "<group>"; };
 		A9F388AC1B6EFBE900087884 /* RoutingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoutingViewController.m; sourceTree = "<group>"; };
-		A9F388AF1B6F090900087884 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A9F388B01B6F47F300087884 /* BusStationSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStationSearchViewController.h; sourceTree = "<group>"; };
 		A9F388B11B6F47F300087884 /* BusStationSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStationSearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,7 +149,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9E704501B69F4B000AA6ACC /* BaiduMapAPI.framework in Frameworks */,
 				A9902A5C1B257B74000E5AD9 /* Security.framework in Frameworks */,
 				A9902A5A1B257B65000E5AD9 /* CoreGraphics.framework in Frameworks */,
 				A9902A581B257B5D000E5AD9 /* SystemConfiguration.framework in Frameworks */,
@@ -190,68 +170,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D3394EB1BF5A251007F07E1 /* RAMAnimatedTabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				2D3394EC1BF5A251007F07E1 /* Animations */,
-				2D3394F71BF5A251007F07E1 /* RAMAnimatedTabBarController.swift */,
-				2D3394F81BF5A251007F07E1 /* RAMItemAnimationProtocol.swift */,
-			);
-			path = RAMAnimatedTabBarController;
-			sourceTree = "<group>";
-		};
-		2D3394EC1BF5A251007F07E1 /* Animations */ = {
-			isa = PBXGroup;
-			children = (
-				2D3394ED1BF5A251007F07E1 /* BounceAnimation */,
-				2D3394EF1BF5A251007F07E1 /* FrameAnimation */,
-				2D3394F11BF5A251007F07E1 /* FumeAnimation */,
-				2D3394F31BF5A251007F07E1 /* RotationAnimation */,
-				2D3394F51BF5A251007F07E1 /* TransitionAniamtions */,
-			);
-			path = Animations;
-			sourceTree = "<group>";
-		};
-		2D3394ED1BF5A251007F07E1 /* BounceAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				2D3394EE1BF5A251007F07E1 /* RAMBounceAnimation.swift */,
-			);
-			path = BounceAnimation;
-			sourceTree = "<group>";
-		};
-		2D3394EF1BF5A251007F07E1 /* FrameAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				2D3394F01BF5A251007F07E1 /* RAMFrameItemAnimation.swift */,
-			);
-			path = FrameAnimation;
-			sourceTree = "<group>";
-		};
-		2D3394F11BF5A251007F07E1 /* FumeAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				2D3394F21BF5A251007F07E1 /* RAMFumeAnimation.swift */,
-			);
-			path = FumeAnimation;
-			sourceTree = "<group>";
-		};
-		2D3394F31BF5A251007F07E1 /* RotationAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				2D3394F41BF5A251007F07E1 /* RAMRotationAnimation.swift */,
-			);
-			path = RotationAnimation;
-			sourceTree = "<group>";
-		};
-		2D3394F51BF5A251007F07E1 /* TransitionAniamtions */ = {
-			isa = PBXGroup;
-			children = (
-				2D3394F61BF5A251007F07E1 /* RAMTransitionItemAnimation.swift */,
-			);
-			path = TransitionAniamtions;
-			sourceTree = "<group>";
-		};
 		A9017C9A1B58EDD700FF175B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,7 +184,6 @@
 		A99029C51B20313A000E5AD9 = {
 			isa = PBXGroup;
 			children = (
-				A9902A5D1B257BC9000E5AD9 /* mapapi.bundle */,
 				A9902A071B203365000E5AD9 /* Frameworks */,
 				A99029D01B20313A000E5AD9 /* EasyBus */,
 				A99029ED1B20313A000E5AD9 /* EasyBusTests */,
@@ -287,7 +204,6 @@
 		A99029D01B20313A000E5AD9 /* EasyBus */ = {
 			isa = PBXGroup;
 			children = (
-				2D3394EB1BF5A251007F07E1 /* RAMAnimatedTabBarController */,
 				A9017C9A1B58EDD700FF175B /* Classes */,
 				A9902A3F1B218409000E5AD9 /* Views */,
 				A9902A371B214335000E5AD9 /* Controllers */,
@@ -296,8 +212,8 @@
 				A99029D61B20313A000E5AD9 /* AppDelegate.mm */,
 				A99029DE1B20313A000E5AD9 /* Main.storyboard */,
 				A99029E11B20313A000E5AD9 /* Images.xcassets */,
-				A99029E31B20313A000E5AD9 /* LaunchScreen.xib */,
 				A99029D81B20313A000E5AD9 /* EasyBus.xcdatamodeld */,
+				2DC4F2D21D6D34EA003F7762 /* LaunchScreen.storyboard */,
 				A99029D11B20313A000E5AD9 /* Supporting Files */,
 				A9902A0C1B2034B5000E5AD9 /* BusService.h */,
 				A9902A0D1B2034B5000E5AD9 /* BusService.m */,
@@ -338,7 +254,6 @@
 		A9902A071B203365000E5AD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A9E7044F1B69F4B000AA6ACC /* BaiduMapAPI.framework */,
 				A9902A5B1B257B74000E5AD9 /* Security.framework */,
 				A9902A591B257B65000E5AD9 /* CoreGraphics.framework */,
 				A9902A571B257B5D000E5AD9 /* SystemConfiguration.framework */,
@@ -480,7 +395,8 @@
 				TargetAttributes = {
 					A99029CD1B20313A000E5AD9 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 55YYYMX9ZE;
+						DevelopmentTeam = EWKW24T8EC;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -519,10 +435,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A99029E01B20313A000E5AD9 /* Main.storyboard in Resources */,
-				A9902A5E1B257BC9000E5AD9 /* mapapi.bundle in Resources */,
 				A9017C991B58A5B100FF175B /* NearbyBusCell.xib in Resources */,
-				A99029E51B20313A000E5AD9 /* LaunchScreen.xib in Resources */,
 				A9E7044E1B68BE6800AA6ACC /* FavoriteBusCell.xib in Resources */,
+				2DC4F2D31D6D34EA003F7762 /* LaunchScreen.storyboard in Resources */,
 				A99029E21B20313A000E5AD9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,7 +506,6 @@
 			files = (
 				A9902A121B2039E6000E5AD9 /* Bus.m in Sources */,
 				A9E704391B60917C00AA6ACC /* HorizontalCell.m in Sources */,
-				2D3394FF1BF5A251007F07E1 /* RAMItemAnimationProtocol.swift in Sources */,
 				A9E704531B6A1E3100AA6ACC /* IndexAnnotationView.m in Sources */,
 				A9902A3A1B214381000E5AD9 /* BuslineSearchViewController.m in Sources */,
 				A909C8F81B54F91A00DCCBCA /* NearbyBusesViewController.m in Sources */,
@@ -604,26 +518,20 @@
 				A99029D71B20313A000E5AD9 /* AppDelegate.mm in Sources */,
 				A9E7048E1B6B18A200AA6ACC /* BusLineAnnotation.m in Sources */,
 				A909C8FB1B54FD7800DCCBCA /* NearbyBusCell.m in Sources */,
-				2D3394FC1BF5A251007F07E1 /* RAMRotationAnimation.swift in Sources */,
 				A9017C9D1B58EE6600FF175B /* UIColor+RandomColor.m in Sources */,
 				A94F33AD1B30087C00D7476A /* TemplatedTintColorButton.m in Sources */,
 				A93CFE3D1B6DE7A500F71E57 /* NearbyStationCell.m in Sources */,
 				A9902A0E1B2034B5000E5AD9 /* BusService.m in Sources */,
 				A9902A4C1B252D25000E5AD9 /* BaiduService.m in Sources */,
 				A94F33AA1B2FF15000D7476A /* FavoriteBusLine.m in Sources */,
-				2D3394FA1BF5A251007F07E1 /* RAMFrameItemAnimation.swift in Sources */,
 				A9F388AD1B6EFBE900087884 /* RoutingViewController.m in Sources */,
 				A981D63F1B5C9C2300CD6FBA /* UIImage+Rotate.m in Sources */,
 				A9902A151B203B9B000E5AD9 /* CommonModel.m in Sources */,
 				A9902A181B203BD4000E5AD9 /* Station.m in Sources */,
-				2D3394FE1BF5A251007F07E1 /* RAMAnimatedTabBarController.swift in Sources */,
-				2D3394FD1BF5A251007F07E1 /* RAMTransitionItemAnimation.swift in Sources */,
 				A981D6441B5E2DA900CD6FBA /* ArrivalCell.m in Sources */,
 				A99029D41B20313A000E5AD9 /* main.m in Sources */,
 				A94F33A71B2FF14F00D7476A /* FavoriteCarCode.m in Sources */,
-				2D3394F91BF5A251007F07E1 /* RAMBounceAnimation.swift in Sources */,
 				A9F388B21B6F47F300087884 /* BusStationSearchViewController.m in Sources */,
-				2D3394FB1BF5A251007F07E1 /* RAMFumeAnimation.swift in Sources */,
 				A9902A1E1B203D74000E5AD9 /* LineInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -654,15 +562,6 @@
 				A9EE1DD01B72FC9700B37AD5 /* zh-Hans */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A99029E31B20313A000E5AD9 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A99029E41B20313A000E5AD9 /* Base */,
-				A9F388AF1B6F090900087884 /* zh-Hans */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -704,7 +603,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -741,7 +640,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -753,26 +652,27 @@
 			baseConfigurationReference = 783D7B94F8C8DAA7363D7870 /* Pods-EasyBus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaiduMap_IOSSDK_v2.8.1_Lib/Release-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = EasyBus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JuheApisSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PSY.EasyBus.com;
+				PRODUCT_BUNDLE_IDENTIFIER = PSY.EasyBus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "EasyBus/EasyBus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -781,25 +681,26 @@
 			baseConfigurationReference = 4AB9B78ADDC7A5687BAF4135 /* Pods-EasyBus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaiduMap_IOSSDK_v2.8.1_Lib/Release-iphoneos",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = EasyBus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JuheApisSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PSY.EasyBus.com;
+				PRODUCT_BUNDLE_IDENTIFIER = PSY.EasyBus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "EasyBus/EasyBus-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

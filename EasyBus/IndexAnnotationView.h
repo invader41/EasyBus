@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 PSY. All rights reserved.
 //
 
-#import <BaiduMapAPI/BMapKit.h>
+#import <BaiduMapAPI_Map/BMKMapView.h>
 
 @interface IndexAnnotationView : BMKAnnotationView
 

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4AA36EB58D59F2DF66D4EF1C'
+               BlueprintIdentifier = '97917A87C78D0D71B5C2B460'
                BlueprintName = 'SLPagingView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libSLPagingView.a'>

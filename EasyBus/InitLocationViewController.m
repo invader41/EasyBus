@@ -8,7 +8,7 @@
 
 #import "InitLocationViewController.h"
 #import "BaiduService.h"
-#import <BaiduMapAPI/BMapKit.h>
+#import <BaiduMapAPI_Location/BMKLocationService.h>
 #import "NearbyBusesViewController.h"
 
 @interface InitLocationViewController ()<BMKGeneralDelegate,BMKLocationServiceDelegate>
@@ -55,22 +55,22 @@
 
 #pragma mark - BMKLocationServiceDelegate
 
--(void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
-{
-    if(!_located)
-    {
-        _located = YES;
-        [[BaiduService SharedInstance].locService setDelegate:nil];
-        [self performSegueWithIdentifier:@"Start" sender:self];
-    }
-}
-
--(void)didFailToLocateUserWithError:(NSError *)error
-{
-    self.titleLabel.text = @"定位失败";
-    [[BaiduService SharedInstance].locService setDelegate:nil];
-    [self performSegueWithIdentifier:@"Start" sender:self];
-}
+//-(void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
+//{
+//    if(!_located)
+//    {
+//        _located = YES;
+//        [[BaiduService SharedInstance].locService setDelegate:nil];
+//        [self performSegueWithIdentifier:@"Start" sender:self];
+//    }
+//}
+//
+//-(void)didFailToLocateUserWithError:(NSError *)error
+//{
+//    self.titleLabel.text = @"定位失败";
+//    [[BaiduService SharedInstance].locService setDelegate:nil];
+//    [self performSegueWithIdentifier:@"Start" sender:self];
+//}
 
 //#pragma mark - CLLocationManagerDelegate
 //
@@ -112,6 +112,7 @@
         //设置定位精确度，默认：kCLLocationAccuracyBest
         [BaiduService SharedInstance].locService.delegate = self;
          [[BaiduService SharedInstance].locService startUserLocationService];
+        [self performSegueWithIdentifier:@"Start" sender:self];
     }
     else {
         NSLog(@"授权失败");

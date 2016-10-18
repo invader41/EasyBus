@@ -28,7 +28,11 @@
     
     [UINavigationBar appearance].barStyle = UIBarStyleBlack;
     [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil]forState:UIControlStateNormal];
     
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil]forState:UIControlStateSelected];
+    
+    [UITabBar appearance].tintColor = [UIColor whiteColor];
     //[UIButton appearance].tintColor = [UIColor whiteColor];
     
     //[UINavigationBar appearance].barTintColor = [UIColor darkGrayColor];

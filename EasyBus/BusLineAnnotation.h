@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 PSY. All rights reserved.
 //
 
-#import <BaiduMapAPI/BMapKit.h>
+#import <BaiduMapAPI_Map/BMKPointAnnotation.h>
 
 @interface BusLineAnnotation : BMKPointAnnotation
 @property (nonatomic) int type; //<0:起点 1：终点 2：公交 3：地铁 4:驾乘 5:进站 6:当前位置

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E9F16D0D-A0D6-4A18-BB44-BB0E5DAC7ABA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>EasyBus</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8271FBC2FCB42ADF928AD62C0E9B89804A831F44</key>
+		<string>https://github.com/invader41/EasyBus.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>EasyBus.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8271FBC2FCB42ADF928AD62C0E9B89804A831F44</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/invader41/EasyBus.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8271FBC2FCB42ADF928AD62C0E9B89804A831F44</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8271FBC2FCB42ADF928AD62C0E9B89804A831F44</string>
+			<key>IDESourceControlWCCName</key>
+			<string>EasyBus</string>
+		</dict>
+	</array>
+</dict>
+</plist>

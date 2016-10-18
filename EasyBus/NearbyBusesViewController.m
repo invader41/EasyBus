@@ -95,10 +95,13 @@
                         self.locationName  = pois[0];
                         [self refreshData:self.locationName];
                     }
-                    else
-                        [self.tableView.header endRefreshing];
+                    else {
+                        self.locationName = @"点击搜索站点";
+                        [self.tableView.mj_header endRefreshing];
+                    }
                 } Failure:^(NSError *error) {
-                    [self.tableView.header endRefreshing];
+                    self.locationName = @"点击搜索站点";
+                    [self.tableView.mj_header endRefreshing];
                 }];
             }
             else
@@ -106,14 +109,14 @@
         }
         else
         {
-            [self.tableView.header endRefreshing];
+            [self.tableView.mj_header endRefreshing];
         }
     }];
     
     header.stateLabel.textColor = [UIColor whiteColor];
     header.lastUpdatedTimeLabel.textColor = [UIColor whiteColor];
-    self.tableView.header = header;
-    [self.tableView.header beginRefreshing];
+    self.tableView.mj_header = header;
+    [self.tableView.mj_header beginRefreshing];
     
     
 }
@@ -237,7 +240,7 @@
         [_unfiltedBuses removeAllObjects];
         [self searchBusStateInStations:stations fromIndex:0];
     } Failure:^(NSError *error) {
-        [self.tableView.header endRefreshing];
+        [self.tableView.mj_header endRefreshing];
     }];
 
 }
@@ -252,7 +255,7 @@
         {
             _filtedBusesDic = [self filterBuses:_unfiltedBuses];
             [self.tableView reloadData];
-            [self.tableView.header endRefreshing];
+            [self.tableView.mj_header endRefreshing];
 
             if(_filtedBusesDic.count > 0 && ![[NSUserDefaults standardUserDefaults] boolForKey:@"NearbyGuide"])
             {
@@ -265,7 +268,7 @@
         }
     } Failure:^(NSError *error)
     {
-        [self.tableView.header endRefreshing];
+        [self.tableView.mj_header endRefreshing];
     }];
 }
 
@@ -297,7 +300,7 @@
 {
     self.locationName = location;
     if(!_displayFavorite)
-        [self.tableView.header beginRefreshing];
+        [self.tableView.mj_header beginRefreshing];
 }
 
 -(void)selectedOtherLocation
@@ -433,7 +436,7 @@
     }
     else
     {
-        [self.tableView.header beginRefreshing];
+        [self.tableView.mj_header beginRefreshing];
     }
 }
 - (IBAction)randomColor:(UIBarButtonItem *)sender

@@ -9,8 +9,9 @@ pod 'DBGHTMLEntities'
 pod 'SLPagingView'
 pod 'Masonry'
 pod 'RACollectionViewReorderableTripletLayout'
-pod 'AFNetworking'
+pod 'AFNetworking', '~> 2.0'
 pod 'GDataXML-HTML'
+pod 'BaiduMapKit'
 end
 
 target 'EasyBusTests' do
